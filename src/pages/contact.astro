@@ -8,96 +8,187 @@ import Layout from '../layouts/Layout.astro';
 >
 	<div class="contact-intro">
 		<p>
-			We'd love to hear from you! Whether you're interested in learning more about our technology, 
-			exploring investment opportunities, or discussing potential partnerships, please don't hesitate 
-			to reach out.
+			We're building the future of decentralized communication and looking for partners who share our vision. Whether you're interested in investment opportunities, technical collaboration, early testing, or simply learning more about our technology, we'd love to hear from you.
 		</p>
 	</div>
 
-	<div class="contact-container">
-		<div class="contact-info">
-			<h2>Contact Information</h2>
+	<div class="participation-section">
+		<h2>How You Can Participate</h2>
+		
+		<div class="option-grid">
+			<div class="option-card">
+				<div class="icon">
+					<!-- Investment icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="m5 12 7-4 7 4"/><path d="M5 16l7 4 7-4"/><path d="M5 20l7 4 7-4"/><path d="M5 8, 7 4 7-4"/></svg>
+				</div>
+				<h3>Investment Opportunities</h3>
+				<p>Help accelerate our development and bring this technology to market. We're seeking funding to expand our team and complete our MVP development.</p>
+				<a href="#contact-form" class="option-link" data-interest="investment">Interested in investment details?</a>
+			</div>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Collaboration icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="10"/><circle cx="6" cy="15" r="3"/><line x1="6" y1="12" x2="6" y2="15"/><circle cx="18" cy="15" r="3"/><line x1="18" y1="12" x2="18" y2="15"/><path d="M12 10L6 12 18 12"/></svg>
+				</div>
+				<h3>Technical Collaboration</h3>
+				<p>Have expertise in BLE, mesh networking, or mobile development? We're looking for collaborators who can help advance our technology.</p>
+				<a href="#contact-form" class="option-link" data-interest="technical">Want to collaborate technically?</a>
+			</div>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Testing icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+				</div>
+				<h3>Early Testing</h3>
+				<p>Sign up to be among the first to test our technology when it's ready for field trials. Help shape the future of mesh communication.</p>
+				<a href="#contact-form" class="option-link" data-interest="testing">Interested in early testing?</a>
+			</div>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Naming icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+				</div>
+				<h3>Help Name Our App</h3>
+				<p>Swagger-Saphron is our project codename. Have ideas for the perfect name for our revolutionary mesh communication app?</p>
+				<a href="#contact-form" class="option-link" data-interest="naming">Have naming suggestions?</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="contact-form-section" id="contact-form">
+		<h2>Reach Out</h2>
+		
+		<form id="contactForm" action="https://formspree.io/f/mnnpnegj" method="POST">
+				<!-- Honeypot field to prevent spam -->
+				<div class="form-group" style="display:none">
+					<label for="_gotcha">Leave this field empty if you're human</label>
+					<input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off">
+				</div>
+				
+				<div id="form-status" class="form-status" style="display:none"></div>
+			<div class="form-row">
+				<div class="form-group">
+					<label for="name">Name*</label>
+					<input type="text" id="name" name="name" required minlength="2" maxlength="100">
+				</div>
+				
+				<div class="form-group">
+					<label for="email">Email*</label>
+					<input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+				</div>
+			</div>
+			
+			<div class="form-row">
+				<div class="form-group">
+					<label for="phone">Phone (optional)</label>
+					<input type="tel" id="phone" name="phone">
+				</div>
+				
+				<div class="form-group">
+					<label for="company">Company/Organization (optional)</label>
+					<input type="text" id="company" name="company">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label>I'm interested in:</label>
+				<div class="interest-tags">
+					<div class="interest-tag" data-value="investment">Investment Opportunities</div>
+					<div class="interest-tag" data-value="technical">Technical Collaboration</div>
+					<div class="interest-tag" data-value="testing">Early Testing</div>
+					<div class="interest-tag" data-value="naming">App Name Suggestions</div>
+					<div class="interest-tag" data-value="general">General Inquiry</div>
+				</div>
+				<input type="hidden" id="interest" name="interest" value="general">
+			</div>
+			
+			<div class="form-group">
+				<label for="message">Message*</label>
+				<textarea id="message" name="message" rows="6" required></textarea>
+			</div>
+			
+			<div class="form-group checkbox-group">
+				<input type="checkbox" id="subscribe" name="subscribe" value="yes">
+				<label for="subscribe">Keep me informed about ResonEcho's development</label>
+			</div>
+			
+			<button type="submit" class="cta-button">Send Message</button>
+		</form>
+	</div>
+
+	<div class="contact-info-section">
+		<h2>Other Ways to Connect</h2>
+		
+		<div class="info-grid">
 			<div class="info-item">
 				<h3>Email</h3>
-				<p><a href="mailto:info@resonecho.com">info@resonecho.com</a></p>
+				<p><a href="mailto:contact@resonecho.com">contact@resonecho.com</a></p>
 			</div>
+			
 			<div class="info-item">
 				<h3>Location</h3>
 				<p>Manitoba, Canada</p>
 			</div>
+			
 			<div class="info-item">
-				<h3>Connect</h3>
+				<h3>Social</h3>
 				<div class="social-links">
 					<a href="https://twitter.com/" target="_blank">Twitter</a>
 					<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
 				</div>
 			</div>
-			<div class="contact-interest">
-				<h3>I'm interested in...</h3>
-				<ul>
-					<li>Learning more about Swagger-Saphron</li>
-					<li>Investment opportunities</li>
-					<li>Partnership possibilities</li>
-					<li>Career opportunities</li>
-					<li>Beta testing</li>
-				</ul>
+			
+			<div class="info-item">
+				<h3>Response Time</h3>
+				<p>As a small team in active development, we review all inquiries and aim to respond within 2-3 business days. For fastest response, email is recommended.</p>
 			</div>
 		</div>
+	</div>
 
-		<div class="contact-form">
-			<h2>Send a Message</h2>
-			<form id="contact-form" action="#" method="POST">
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" id="name" name="name" required>
+	<div class="faq-section">
+		<h2>Frequently Asked Questions</h2>
+		
+		<div class="faq-container">
+			<div class="faq-item">
+				<div class="faq-question">What stage of development is your technology in?</div>
+				<div class="faq-answer">
+					<p>We're currently in the early stages of development (Phase 1-2 of a 5-phase process). We've established the application architecture and are implementing core Bluetooth functionality, with significant development milestones ahead before a functional MVP is ready.</p>
 				</div>
-				
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" required>
+			</div>
+			
+			<div class="faq-item">
+				<div class="faq-question">When will your app be available for testing?</div>
+				<div class="faq-answer">
+					<p>We're targeting initial closed beta testing in Q1-Q2 2026, depending on development progress and funding. You can sign up for early testing access using the form above, and we'll keep you updated as we approach testing phases.</p>
 				</div>
-				
-				<div class="form-group">
-					<label for="subject">Subject</label>
-					<input type="text" id="subject" name="subject" required>
+			</div>
+			
+			<div class="faq-item">
+				<div class="faq-question">Are you seeking investment?</div>
+				<div class="faq-answer">
+					<p>Yes, we're currently open to investment opportunities to accelerate our development timeline. If you're interested in learning more, please select "Investment Opportunities" in the contact form.</p>
 				</div>
-				
-				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea id="message" name="message" rows="6" required></textarea>
+			</div>
+			
+			<div class="faq-item">
+				<div class="faq-question">What platforms will your app support?</div>
+				<div class="faq-answer">
+					<p>Our initial development is focused on Android, with iOS planned for future implementation after our core technology is proven.</p>
 				</div>
-				
-				<div class="form-group">
-					<label for="interest">I'm interested in:</label>
-					<select id="interest" name="interest">
-						<option value="information">Learning more about Swagger-Saphron</option>
-						<option value="investment">Investment opportunities</option>
-						<option value="partnership">Partnership possibilities</option>
-						<option value="career">Career opportunities</option>
-						<option value="beta">Beta testing</option>
-						<option value="other">Other</option>
-					</select>
+			</div>
+			
+			<div class="faq-item">
+				<div class="faq-question">How can I contribute if I have technical expertise?</div>
+				<div class="faq-answer">
+					<p>We're looking for collaborators with experience in BLE, mesh networking, mobile development, and battery optimization. Please reach out through our contact form with details about your background and how you'd like to contribute.</p>
 				</div>
-				
-				<button type="submit" class="cta-button">Send Message</button>
-			</form>
+			</div>
 		</div>
 	</div>
 </Layout>
-
-<script>
-	// Simple form validation
-	document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-		e.preventDefault();
-		
-		// In a real implementation, you would send the form data to your server
-		// or a form submission service here.
-		
-		// For demo purposes, show a success message
-		alert('Thank you for your message! We will get back to you soon.');
-		this.reset();
-	});
-</script>
 
 <style>
 	.contact-intro {
@@ -110,68 +201,41 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.2rem;
 		line-height: 1.6;
 	}
-
-	.contact-container {
-		display: grid;
-		grid-template-columns: 1fr 1.5fr;
-		gap: 3rem;
-		max-width: 1080px;
-		margin: 0 auto;
+	
+	.participation-section,
+	.contact-form-section,
+	.contact-info-section,
+	.faq-section {
+		margin: 5rem 0;
 	}
-
-	.contact-info h2,
-	.contact-form h2 {
-		text-align: left;
+	
+	.option-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+		margin: 2rem 0;
+	}
+	
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.5rem;
 		margin-bottom: 1.5rem;
 	}
-
-	.info-item {
-		margin-bottom: 2rem;
-	}
-
-	.info-item h3 {
-		margin-bottom: 0.5rem;
-		color: var(--primary);
-		font-size: 1.2rem;
-	}
-
-	.social-links {
-		display: flex;
-		gap: 1rem;
-	}
-
-	.social-links a {
-		display: inline-block;
-		padding: 0.5rem 1rem;
-		background-color: rgba(var(--gray-light), 0.7);
-		border-radius: 4px;
-		transition: background-color 0.2s ease;
-	}
-
-	.social-links a:hover {
-		background-color: rgba(var(--gray-light), 1);
-		text-decoration: none;
-	}
-
-	.contact-interest ul {
-		padding-left: 1.5rem;
-	}
-
-	.contact-interest li {
-		margin-bottom: 0.5rem;
-	}
-
+	
 	.form-group {
 		margin-bottom: 1.5rem;
 	}
-
+	
 	label {
 		display: block;
 		margin-bottom: 0.5rem;
 		font-weight: 500;
 	}
-
-	input,
+	
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
 	textarea,
 	select {
 		width: 100%;
@@ -181,7 +245,7 @@ import Layout from '../layouts/Layout.astro';
 		font-family: inherit;
 		font-size: 1rem;
 	}
-
+	
 	input:focus,
 	textarea:focus,
 	select:focus {
@@ -189,35 +253,258 @@ import Layout from '../layouts/Layout.astro';
 		border-color: var(--primary);
 		box-shadow: 0 0 0 2px rgba(58, 92, 201, 0.2);
 	}
-
-	button[type="submit"] {
-		display: inline-block;
-		background-color: var(--primary);
-		color: white;
-		padding: 0.8rem 2rem;
-		border: none;
+	
+	.checkbox-group {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	
+	.checkbox-group input {
+		width: auto;
+	}
+	
+	.checkbox-group label {
+		margin-bottom: 0;
+		font-weight: normal;
+	}
+	
+	.form-status {
+		margin-bottom: 1.5rem;
+		padding: 1rem;
 		border-radius: 4px;
-		font-weight: bold;
-		font-size: 1.1rem;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
 	}
-
-	button[type="submit"]:hover {
-		background-color: var(--primary-dark);
+	
+	.form-status .success-message {
+		background-color: rgba(0, 180, 0, 0.1);
+		color: rgb(0, 120, 0);
+		padding: 1rem;
+		border-radius: 4px;
+		border-left: 4px solid rgb(0, 120, 0);
 	}
-
+	
+	.form-status .error-message {
+		background-color: rgba(220, 0, 0, 0.1);
+		color: rgb(180, 0, 0);
+		padding: 1rem;
+		border-radius: 4px;
+		border-left: 4px solid rgb(180, 0, 0);
+	}
+	
+	.interest-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+	}
+	
+	.info-item {
+		padding: 1.5rem;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+	}
+	
+	.info-item h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+	}
+	
+	.social-links {
+		display: flex;
+		gap: 1rem;
+	}
+	
+	.social-links a {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background-color: rgba(var(--gray-light), 0.7);
+		border-radius: 4px;
+		transition: background-color 0.2s ease;
+	}
+	
+	.social-links a:hover {
+		background-color: rgba(var(--gray-light), 1);
+		text-decoration: none;
+	}
+	
+	.faq-container {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+	
 	@media (max-width: 768px) {
-		.contact-container {
+		.option-grid {
 			grid-template-columns: 1fr;
 		}
-
-		.contact-info {
-			order: 2;
+		
+		.form-row {
+			grid-template-columns: 1fr;
+			gap: 0;
 		}
-
-		.contact-form {
-			order: 1;
+		
+		.info-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
+
+<script>
+	// Dynamic form handling
+	document.addEventListener('DOMContentLoaded', function() {
+		// Option card linking to form
+		document.querySelectorAll('.option-link').forEach(function(link) {
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+				const interest = this.getAttribute('data-interest');
+				
+				// Select the corresponding interest tag
+				document.querySelectorAll('.interest-tag').forEach(tag => {
+					tag.classList.remove('selected');
+					if(tag.getAttribute('data-value') === interest) {
+						tag.classList.add('selected');
+					}
+				});
+				
+				// Set the hidden input value
+				document.getElementById('interest').value = interest;
+				
+				// Update placeholder text
+				updatePlaceholder(interest);
+				
+				// Scroll to form
+				document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'});
+			});
+		});
+		
+		// Interest tag selection
+		document.querySelectorAll('.interest-tag').forEach(function(tag) {
+			tag.addEventListener('click', function() {
+				// Remove selection from all tags
+				document.querySelectorAll('.interest-tag').forEach(t => {
+					t.classList.remove('selected');
+				});
+				
+				// Add selection to clicked tag
+				this.classList.add('selected');
+				
+				// Update hidden input
+				const interest = this.getAttribute('data-value');
+				document.getElementById('interest').value = interest;
+				
+				// Update placeholder
+				updatePlaceholder(interest);
+			});
+		});
+		
+		// Select default interest (general)
+		document.querySelector('.interest-tag[data-value="general"]').classList.add('selected');
+		
+		// Check for URL parameter for interest
+		const urlParams = new URLSearchParams(window.location.search);
+		const interestParam = urlParams.get('interest');
+		
+		if(interestParam) {
+			const interestTag = document.querySelector(`.interest-tag[data-value="${interestParam}"]`);
+			if(interestTag) {
+				// Simulate click on the appropriate tag
+				interestTag.click();
+			}
+		}
+		
+		// Form submission handling with Formspree
+		document.getElementById('contactForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			// Get the form data
+			const formData = new FormData(this);
+			
+			// Send the form data to Formspree
+			fetch(this.action, {
+				method: 'POST',
+				body: formData,
+				headers: {
+					'Accept': 'application/json'
+				}
+			})
+			.then(response => {
+				if (response.ok) {
+					// Success message
+					// Show success message in form instead of alert
+						const statusDiv = document.getElementById('form-status');
+						statusDiv.innerHTML = '<div class="success-message">Thank you for your message! We will get back to you soon.</div>';
+						statusDiv.style.display = 'block';
+						
+						// Scroll to status message
+						statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+					this.reset();
+					
+					// Reset interest selection to general
+					document.querySelectorAll('.interest-tag').forEach(tag => {
+						tag.classList.remove('selected');
+						if(tag.getAttribute('data-value') === 'general') {
+							tag.classList.add('selected');
+						}
+					});
+					document.getElementById('interest').value = 'general';
+					updatePlaceholder('general');
+				} else {
+					// Error handling
+					response.json().then(data => {
+						if (Object.hasOwn(data, 'errors')) {
+							const statusDiv = document.getElementById('form-status');
+								const errorMessage = data["errors"].map(error => error["message"]).join(", ");
+								statusDiv.innerHTML = `<div class="error-message">${errorMessage}</div>`;
+								statusDiv.style.display = 'block';
+								statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+						} else {
+							const statusDiv = document.getElementById('form-status');
+								statusDiv.innerHTML = '<div class="error-message">Oops! There was a problem submitting your form. Please try again.</div>';
+								statusDiv.style.display = 'block';
+								statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+						}
+					});
+				}
+			})
+			.catch(error => {
+				// Network error handling
+				const statusDiv = document.getElementById('form-status');
+					statusDiv.innerHTML = '<div class="error-message">Oops! There was a network error. Please check your connection and try again.</div>';
+					statusDiv.style.display = 'block';
+					statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+				console.error(error);
+			});
+		});
+		
+		// FAQ accordion functionality
+		document.querySelectorAll('.faq-question').forEach(function(question) {
+			question.addEventListener('click', function() {
+				const faqItem = this.parentElement;
+				faqItem.classList.toggle('active');
+			});
+		});
+		
+		// Function to update message placeholder based on interest
+		function updatePlaceholder(interest) {
+			const messageField = document.getElementById('message');
+			const placeholders = {
+				investment: "Please tell us about your investment background and interests. What aspects of ResonEcho's vision are you most excited about?",
+				technical: "Share your technical background and how you think you could contribute to our mesh networking technology development.",
+				testing: "What use cases are you most interested in? Do you have specific environments where you'd like to test our technology?",
+				naming: "What name do you suggest for our app and why? What does it convey about the technology?",
+				general: "How can we help you? Please provide details about your inquiry."
+			};
+			
+			messageField.placeholder = placeholders[interest] || placeholders.general;
+		}
+		
+		// Initialize with general placeholder
+		updatePlaceholder('general');
+	});
+</script>

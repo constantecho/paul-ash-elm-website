@@ -1,309 +1,553 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-const pageTitle = "Our Technology";
-const pageDescription = "Advanced BLE Mesh Networking";
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={pageTitle} description={pageDescription} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<div class="container hero-container">
-				<h1>{pageTitle}</h1>
-				<p class="description">{pageDescription}</p>
+<Layout
+	title="Our Technology"
+	description="Advanced BLE Mesh Networking"
+>
+	<div class="technology-intro">
+		<h2>Connectivity Beyond Infrastructure</h2>
+		<p>
+			In today's connected world, we still face a fundamental limitation: traditional communication networks fail precisely when we need them most. Cellular networks become overwhelmed at crowded events, are unavailable in remote areas, and are vulnerable during emergencies.
+		</p>
+		<p>
+			We're developing a solution that transforms how devices communicate by creating decentralized, self-forming networks that operate independently of traditional infrastructure. By leveraging the Bluetooth Low Energy (BLE) capabilities already in your smartphone, we're building technology that creates resilient communication channels when conventional networks aren't available.
+		</p>
+		
+		<div class="comparison-visual">
+			<div class="visual-item">
+				<h3>Traditional Networks</h3>
+				<div class="visual-image">
+					<!-- Visualization of traditional network architecture -->
+					<img src="/images/traditional-network.png" alt="Traditional Network Architecture" />
+				</div>
+				<p>All devices must connect to central infrastructure (cell towers, WiFi)</p>
 			</div>
-
-			<div class="technology-intro">
-				<p>
-					At the core of ResonEcho's innovation is our advanced implementation of Bluetooth Low Energy (BLE) 
-					mesh networking. Unlike traditional networks that rely on centralized infrastructure, our technology 
-					creates a dynamic, self-healing network where each device serves as both a user endpoint and a 
-					network relay.
-				</p>
+			<div class="visual-item">
+				<h3>Mesh Networks</h3>
+				<div class="visual-image">
+					<!-- Visualization of mesh network architecture -->
+					<img src="/images/mesh-network-concept.png" alt="Mesh Network Architecture" />
+				</div>
+				<p>Devices connect directly to each other, forming a resilient web of connections</p>
 			</div>
+		</div>
+	</div>
 
-			<div class="technology-section">
-				<h2>How BLE Mesh Works</h2>
-				<div class="tech-content">
-					<div class="tech-text">
-						<p>
-							Bluetooth Low Energy (BLE) is traditionally known for its point-to-point connections 
-							over short distances. Our mesh implementation transforms this limitation by enabling 
-							devices to relay messages to each other, creating a network that extends far beyond 
-							the range of a single device.
-						</p>
-						<p>
-							Each smartphone running our app becomes both a user endpoint and a network node. 
-							Messages and data packets "hop" from device to device until they reach their destination, 
-							effectively creating an ad-hoc network that functions without cellular or WiFi infrastructure.
-						</p>
-					</div>
+	<div class="mesh-explained-section">
+		<h2>How Mesh Networks Change Everything</h2>
+		<p class="section-intro">
+			Bluetooth has traditionally been a point-to-point technology, connecting one device directly to another over a limited range. Mesh networking fundamentally transforms this limitation by allowing messages to hop from device to device until they reach their destination.
+		</p>
+		
+		<div class="mesh-visualization">
+			<!-- Animated or static graphic showing mesh communication -->
+			<img src="/images/mesh-communication-flow.png" alt="Mesh Communication Flow" />
+			<div class="concept-badge">Conceptual Visualization</div>
+		</div>
+		
+		<div class="mesh-components">
+			<div class="component-item">
+				<h3>Node Discovery</h3>
+				<p>Each device running our app automatically identifies other compatible devices within Bluetooth range.</p>
+			</div>
+			<div class="component-item">
+				<h3>Message Relay</h3>
+				<p>Instead of sending messages directly to their final destination, devices pass them to nearby nodes, which continue forwarding them along optimal paths.</p>
+			</div>
+			<div class="component-item">
+				<h3>Dynamic Adaptation</h3>
+				<p>As people move and conditions change, the network continuously reconfigures itself to maintain reliable communication paths.</p>
+			</div>
+		</div>
+		
+		<div class="key-differences">
+			<h3>Key Differences from Traditional Bluetooth</h3>
+			<p>While standard Bluetooth connections work only between directly paired devices within about 30 feet, our mesh approach allows:</p>
+			<ul>
+				<li>Communication across much greater distances</li>
+				<li>Messages to reach recipients even when they're not directly in range</li>
+				<li>Networks that grow stronger and more resilient as more users join</li>
+			</ul>
+		</div>
+		
+		<div class="mesh-benefits">
+			<h3>Benefits of This Approach</h3>
+			<div class="benefits-grid">
+				<div class="benefit-item">
+					<div class="benefit-icon"><!-- Icon placeholder --></div>
+					<h4>Infrastructure Independent</h4>
+					<p>Works without cellular towers or WiFi access points</p>
+				</div>
+				<div class="benefit-item">
+					<div class="benefit-icon"><!-- Icon placeholder --></div>
+					<h4>Scales Positively</h4>
+					<p>Improves with more users rather than becoming congested</p>
+				</div>
+				<div class="benefit-item">
+					<div class="benefit-icon"><!-- Icon placeholder --></div>
+					<h4>Redundant Paths</h4>
+					<p>Creates multiple message routes for enhanced reliability</p>
+				</div>
+				<div class="benefit-item">
+					<div class="benefit-icon"><!-- Icon placeholder --></div>
+					<h4>Uses Existing Hardware</h4>
+					<p>Functions entirely on technology already in your smartphone</p>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<div class="advantages-section">
-				<h2>Technical Advantages</h2>
-				<div class="advantage-grid">
-					<div class="advantage-item">
-						<h3>Energy-Balanced Routing</h3>
-						<p>
-							Our proprietary algorithms distribute message routing to optimize battery life across 
-							all devices in the network, ensuring no single device bears an unfair power burden.
-						</p>
-					</div>
-					<div class="advantage-item">
-						<h3>Adaptive RSSI Management</h3>
-						<p>
-							Intelligent signal strength analysis maximizes range while minimizing interference, 
-							dynamically adjusting power levels based on environmental conditions.
-						</p>
-					</div>
-					<div class="advantage-item">
-						<h3>Priority-Based Message Handling</h3>
-						<p>
-							Critical communications receive routing precedence, ensuring emergency messages and 
-							important alerts are prioritized through the network.
-						</p>
-					</div>
-					<div class="advantage-item">
-						<h3>Network Density Optimization</h3>
-						<p>
-							Performance scales efficiently in both sparse and crowded environments, automatically 
-							adjusting routing strategies based on the number of available devices.
-						</p>
-					</div>
-					<div class="advantage-item">
-						<h3>Store-and-Forward Reliability</h3>
-						<p>
-							Messages persist until delivery is confirmed, ensuring reliability even when network 
-							connectivity is intermittent or devices move in and out of range.
-						</p>
-					</div>
-					<div class="advantage-item">
-						<h3>Secure Message Encryption</h3>
-						<p>
-							End-to-end encryption ensures that messages remain private and secure, even as they 
-							travel through multiple relay devices in the mesh network.
-						</p>
-					</div>
+	<div class="approach-section">
+		<h2>Turning Vision Into Reality</h2>
+		<p class="section-intro">
+			We're developing our BLE mesh networking technology based on established protocols while introducing proprietary innovations to optimize for specific challenges in mobile device communication.
+		</p>
+		
+		<div class="approach-grid">
+			<div class="approach-item">
+				<h3>Modified Flooding Mesh Protocol</h3>
+				<div class="approach-visual">
+					<!-- Protocol diagram visualization -->
+					<img src="/images/protocol-diagram.png" alt="Modified Flooding Mesh Protocol" />
+					<div class="concept-badge">Technical Concept</div>
+				</div>
+				<p class="approach-description">We're implementing an optimized version of flooding mesh protocols where devices intelligently relay messages based on network conditions rather than broadcasting all messages.</p>
+				<p class="approach-challenge"><strong>Challenge:</strong> Balancing message propagation reliability with network efficiency to prevent unnecessary transmission.</p>
+				<p class="approach-status"><strong>Status:</strong> Protocol design completed, implementation in progress.</p>
+			</div>
+			
+			<div class="approach-item">
+				<h3>Adaptive Power Management</h3>
+				<div class="approach-visual">
+					<!-- Battery optimization visualization -->
+					<img src="/images/power-management.png" alt="Adaptive Power Management" />
+					<div class="concept-badge">Technical Concept</div>
+				</div>
+				<p class="approach-description">Our algorithms will dynamically adjust transmission power and scanning intervals based on network density, message priority, and device battery status.</p>
+				<p class="approach-challenge"><strong>Challenge:</strong> Creating efficient power profiles that maintain network reliability without excessive battery drain.</p>
+				<p class="approach-status"><strong>Status:</strong> Concept defined, implementation planning phase.</p>
+			</div>
+			
+			<div class="approach-item">
+				<h3>Store-and-Forward Reliability</h3>
+				<div class="approach-visual">
+					<!-- Message persistence visualization -->
+					<img src="/images/message-persistence.png" alt="Store-and-Forward Reliability" />
+					<div class="concept-badge">Technical Concept</div>
+				</div>
+				<p class="approach-description">Critical messages persist on intermediate devices until delivery confirmation, ensuring reliability even with intermittent connectivity.</p>
+				<p class="approach-challenge"><strong>Challenge:</strong> Managing storage constraints and privacy considerations with message persistence.</p>
+				<p class="approach-status"><strong>Status:</strong> Basic framework developed, authentication mechanisms in design.</p>
+			</div>
+			
+			<div class="approach-item">
+				<h3>Decentralized Group Management</h3>
+				<div class="approach-visual">
+					<!-- Group formation visualization -->
+					<img src="/images/group-management.png" alt="Decentralized Group Management" />
+					<div class="concept-badge">Technical Concept</div>
+				</div>
+				<p class="approach-description">Users can create and manage communication groups that maintain integrity across the mesh without requiring centralized servers.</p>
+				<p class="approach-challenge"><strong>Challenge:</strong> Ensuring group consistency across distributed devices with potentially intermittent connectivity.</p>
+				<p class="approach-status"><strong>Status:</strong> Data structures defined, implementation beginning.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="challenges-section">
+		<h2>Overcoming Real-World Challenges</h2>
+		<p class="section-intro">
+			Creating effective mesh networks on consumer smartphones presents several significant technical challenges. Here's how we're addressing the most critical ones:
+		</p>
+		
+		<div class="challenge-item">
+			<h3>BLE Connection Limitations</h3>
+			<div class="challenge-content">
+				<div class="challenge-description">
+					<p>Bluetooth Low Energy was designed primarily for peripheral device connections rather than peer-to-peer mesh networking, with limitations on connection quantities and types.</p>
+				</div>
+				<div class="approach-solution">
+					<h4>Our Approach</h4>
+					<p>We're implementing a hybrid connection model that combines advertising and GATT connections, optimizing for different scenarios based on network conditions.</p>
+				</div>
+				<div class="current-status">
+					<h4>Current Status</h4>
+					<p>Basic scanning and advertising implemented, connection management in development.</p>
 				</div>
 			</div>
-
-			<div class="challenges-section">
-				<h2>Overcoming Technical Challenges</h2>
-				<div class="challenges-content">
-					<p>
-						Creating an effective BLE mesh network poses several significant challenges that our team has 
-						successfully addressed:
-					</p>
-					<div class="challenge-items">
-						<div class="challenge-item">
-							<h3>Battery Consumption</h3>
-							<p>
-								BLE was designed for low power consumption, but mesh networking can increase 
-								power demands. Our dynamic power management algorithms intelligently balance 
-								connectivity needs with battery preservation.
-							</p>
-						</div>
-						<div class="challenge-item">
-							<h3>Scalability</h3>
-							<p>
-								As networks grow, message routing becomes exponentially complex. We've developed 
-								specialized algorithms that maintain efficiency even as the mesh scales to hundreds 
-								of devices.
-							</p>
-						</div>
-						<div class="challenge-item">
-							<h3>Network Stability</h3>
-							<p>
-								Mobile devices constantly move in and out of range. Our self-healing network 
-								continuously recalculates optimal paths, ensuring reliable delivery despite the 
-								dynamic nature of the mesh.
-							</p>
-						</div>
-					</div>
+		</div>
+		
+		<div class="challenge-item">
+			<h3>Battery Optimization</h3>
+			<div class="challenge-content">
+				<div class="challenge-description">
+					<p>Continuous Bluetooth operation can significantly impact smartphone battery life, potentially making the application impractical for all-day use.</p>
+				</div>
+				<div class="approach-solution">
+					<h4>Our Approach</h4>
+					<p>We're developing adaptive duty cycling algorithms that reduce power consumption during periods of stability while maintaining responsiveness when needed.</p>
+				</div>
+				<div class="current-status">
+					<h4>Current Status</h4>
+					<p>Baseline power measurements established, optimization algorithms in design phase.</p>
 				</div>
 			</div>
-
-			<div class="technology-cta">
-				<h2>Experience the Technology</h2>
-				<p>
-					Our flagship application, Swagger-Saphron, showcases our BLE mesh networking technology in action. 
-					Learn more about how it can transform your communication capabilities in areas where traditional 
-					networks are unavailable or unreliable.
-				</p>
-				<a href="/product" class="cta-button">Explore Swagger-Saphron</a>
+		</div>
+		
+		<div class="challenge-item">
+			<h3>Security & Privacy</h3>
+			<div class="challenge-content">
+				<div class="challenge-description">
+					<p>Mesh networks introduce unique security challenges, as messages travel through multiple third-party devices before reaching their destination.</p>
+				</div>
+				<div class="approach-solution">
+					<h4>Our Approach</h4>
+					<p>End-to-end encryption ensures that only intended recipients can read message content, while our anonymous routing protocol prevents intermediate devices from tracking message origins and destinations.</p>
+				</div>
+				<div class="current-status">
+					<h4>Current Status</h4>
+					<p>Security architecture defined, core encryption components identified.</p>
+				</div>
 			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+		</div>
+	</div>
+
+	<div class="development-section">
+		<h2>Building on Solid Foundations</h2>
+		
+		<div class="methodology">
+			<h3>Technical Methodology</h3>
+			<p>Our development approach combines established mesh networking research with practical mobile application considerations:</p>
+			<ul>
+				<li>Iterative prototyping with real-world testing</li>
+				<li>Modular architecture allowing component-level optimization</li>
+				<li>Data-driven decision making based on performance metrics</li>
+			</ul>
+		</div>
+		
+		<div class="technologies">
+			<h3>Technologies We're Using</h3>
+			<p>Our development leverages key technologies and frameworks:</p>
+			<ul>
+				<li>Nordic Semiconductor's Bluetooth Mesh SDK</li>
+				<li>Android BLE APIs with custom extensions</li>
+				<li>Signal protocol-inspired end-to-end encryption</li>
+				<li>Open-source mapping technologies for location features</li>
+			</ul>
+		</div>
+		
+		<div class="research">
+			<h3>Research Foundations</h3>
+			<p>Our approach is informed by established research in:</p>
+			<ul>
+				<li>Mobile ad-hoc networks (MANETs)</li>
+				<li>Delay-tolerant networking</li>
+				<li>Energy-efficient protocol design</li>
+				<li>Mesh network security</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="roadmap-section">
+		<h2>The Path Forward</h2>
+		
+		<div class="current-capabilities">
+			<h3>Current Technical Capabilities</h3>
+			<p>We've established foundational elements of our technology:</p>
+			<ul>
+				<li>Application architecture and user interface framework</li>
+				<li>Basic Bluetooth device discovery</li>
+				<li>Framework for message handling</li>
+				<li>Data structures for group management</li>
+			</ul>
+		</div>
+		
+		<div class="next-milestones">
+			<h3>Next Technical Milestones</h3>
+			<p>Our immediate technical focus areas are:</p>
+			<ol>
+				<li>Complete implementation of the BLE mesh core using Nordic SDK</li>
+				<li>Achieve reliable device-to-device message passing</li>
+				<li>Implement message routing algorithms with basic optimization</li>
+				<li>Develop functional group creation and management</li>
+			</ol>
+		</div>
+		
+		<div class="long-term">
+			<h3>Long-term Technical Vision</h3>
+			<p>Beyond our initial implementation, we're planning to:</p>
+			<ul>
+				<li>Optimize for increasingly larger mesh networks</li>
+				<li>Enhance location sharing precision and battery efficiency</li>
+				<li>Implement cross-platform support</li>
+				<li>Develop offline mapping capabilities</li>
+				<li>Create APIs for integration with other applications</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="cta-section">
+		<h2>Help Build the Future of Decentralized Communication</h2>
+		<p>We're looking for individuals and organizations who share our vision for resilient, infrastructure-independent communication technology.</p>
+		
+		<div class="cta-options">
+			<a href="/contact?interest=technical" class="cta-button">Have technical expertise to contribute?</a>
+			<a href="/contact?interest=testing" class="cta-button">Interested in testing our technology?</a>
+			<a href="/contact?interest=investment" class="cta-button">Seeking investment information?</a>
+		</div>
+	</div>
+</Layout>
 
 <style>
-	.container {
-		max-width: 1080px;
-		margin: 0 auto;
-		padding: 0 1rem;
-	}
-	
-	.hero-container {
-		text-align: center;
-		padding: 3rem 1rem;
-	}
-	
-	.hero-container h1 {
-		margin-bottom: 1rem;
-	}
-	
-	.description {
-		max-width: 800px;
-		margin: 0 auto;
-		color: rgb(var(--gray));
-	}
-
 	.technology-intro {
-		max-width: 800px;
-		margin: 0 auto 4rem;
+		max-width: 900px;
+		margin: 0 auto 5rem;
 	}
 
 	.technology-intro p {
-		font-size: 1.3rem;
-		line-height: 1.6;
-	}
-
-	.technology-section,
-	.advantages-section,
-	.challenges-section,
-	.technology-cta {
-		margin: 5rem 0;
-		max-width: 1080px;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 0 1rem;
-	}
-
-	h2 {
-		margin-bottom: 2rem;
-		text-align: center;
-	}
-
-	.tech-content {
-		display: flex;
-		gap: 3rem;
-		align-items: center;
-	}
-
-	.tech-text {
-		flex: 1;
-	}
-
-	.tech-image {
-		flex: 1;
-	}
-
-	.advantage-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-	}
-
-	.advantage-item {
-		padding: 1.5rem;
-		border-radius: 8px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		background-color: white;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-
-	.advantage-item:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-	}
-
-	.advantage-item h3 {
-		color: var(--primary);
-		margin-top: 0;
-	}
-
-	.challenges-content {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	.challenges-content > p {
 		font-size: 1.2rem;
-		margin-bottom: 2rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
 	}
-
-	.challenge-items {
+	
+	.comparison-visual {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		margin-top: 3rem;
+	}
+	
+	.visual-item {
+		text-align: center;
+	}
+	
+	.visual-item h3 {
+		margin-bottom: 1.5rem;
+	}
+	
+	.visual-image {
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+		margin-bottom: 1.5rem;
+	}
+	
+	.visual-image img {
+		width: 100%;
+		display: block;
+	}
+	
+	.mesh-explained-section {
+		margin: 5rem 0;
+	}
+	
+	.mesh-visualization {
+		max-width: 800px;
+		margin: 3rem auto;
+		position: relative;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+	}
+	
+	.mesh-visualization img {
+		width: 100%;
+		display: block;
+	}
+	
+	.mesh-components {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin: 3rem 0;
+	}
+	
+	.component-item {
+		padding: 1.5rem;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	}
+	
+	.component-item h3 {
+		color: var(--primary);
+		margin-bottom: 1rem;
+	}
+	
+	.key-differences {
+		margin: 3rem 0;
+	}
+	
+	.key-differences ul {
+		margin-top: 1rem;
+		padding-left: 1.5rem;
+	}
+	
+	.key-differences li {
+		margin-bottom: 0.5rem;
+	}
+	
+	.benefits-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+	
+	.benefit-item {
+		text-align: center;
+		padding: 1.5rem;
+		background-color: rgba(var(--gray-light), 0.3);
+		border-radius: 8px;
+	}
+	
+	.benefit-icon {
+		font-size: 2rem;
+		color: var(--primary);
+		margin-bottom: 1rem;
+	}
+	
+	.approach-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2.5rem;
+		margin: 3rem 0;
+	}
+	
+	.approach-item {
+		background-color: white;
+		border-radius: 8px;
+		padding: 2rem;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	}
+	
+	.approach-visual {
+		margin: 1.5rem 0;
+		position: relative;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	
+	.approach-visual img {
+		width: 100%;
+		display: block;
+	}
+	
+	.approach-status {
+		margin-top: 1rem;
+		padding: 0.75rem;
+		background-color: rgba(var(--gray-light), 0.4);
+		border-radius: 4px;
+	}
+	
+	.challenge-item {
+		margin-bottom: 3rem;
+		background-color: white;
+		border-radius: 8px;
+		padding: 2rem;
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	}
+	
+	.challenge-item h3 {
+		margin-bottom: 1.5rem;
+		color: var(--primary);
+	}
+	
+	.challenge-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 		gap: 2rem;
 	}
-
-	.challenge-item {
-		background-color: rgba(var(--gray-light), 0.4);
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-
-	.challenge-item h3 {
-		color: var(--primary);
-		margin-top: 0;
-	}
-
-	.technology-cta {
-		text-align: center;
-		padding: 3rem;
-		background-color: rgba(var(--gray-light), 0.5);
-		border-radius: 8px;
-	}
-
-	.technology-cta p {
-		max-width: 800px;
-		margin: 0 auto 2rem;
-	}
-
-	.cta-button {
-		display: inline-block;
-		background-color: var(--primary);
-		color: white;
-		padding: 0.8rem 2rem;
-		border-radius: 4px;
-		font-weight: bold;
+	
+	.challenge-content h4 {
+		margin-bottom: 1rem;
 		font-size: 1.1rem;
-		transition: background-color 0.3s ease;
 	}
-
-	.cta-button:hover {
-		background-color: var(--primary-dark);
-		color: white;
-		text-decoration: none;
+	
+	.development-section {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+		margin: 5rem 0;
 	}
-
+	
+	.methodology, .technologies, .research {
+		padding: 2rem;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	}
+	
+	.methodology h3, .technologies h3, .research h3 {
+		margin-bottom: 1.5rem;
+		color: var(--primary);
+	}
+	
+	.methodology ul, .technologies ul, .research ul {
+		padding-left: 1.5rem;
+		margin-top: 1rem;
+	}
+	
+	.methodology li, .technologies li, .research li {
+		margin-bottom: 0.5rem;
+	}
+	
+	.current-capabilities, .next-milestones, .long-term {
+		margin-bottom: 3rem;
+	}
+	
+	.current-capabilities h3, .next-milestones h3, .long-term h3 {
+		margin-bottom: 1.5rem;
+	}
+	
+	.current-capabilities ul, .next-milestones ol, .long-term ul {
+		padding-left: 1.5rem;
+		margin-top: 1rem;
+	}
+	
+	.current-capabilities li, .next-milestones li, .long-term li {
+		margin-bottom: 0.5rem;
+	}
+	
+	.cta-options {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		margin-top: 2rem;
+	}
+	
 	@media (max-width: 768px) {
-		.technology-intro p {
-			font-size: 1.1rem;
+		.comparison-visual {
+			grid-template-columns: 1fr;
+			gap: 2rem;
 		}
-
-		.tech-content {
+		
+		.mesh-components {
+			grid-template-columns: 1fr;
+		}
+		
+		.benefits-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		
+		.approach-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.challenge-content {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		
+		.development-section {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.cta-options {
 			flex-direction: column;
-		}
-
-		.advantage-grid {
-			grid-template-columns: 1fr;
-		}
-
-		.challenge-items {
-			grid-template-columns: 1fr;
 		}
 	}
 </style>
