@@ -1,5 +1,5 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+// Global site configuration
+export const SITE_TITLE = 'ResonEcho';
+export const SITE_DESCRIPTION = 'Connectivity Beyond Networks';
+export const COMPANY_TAGLINE = 'Connecting Beyond Networks';
+export const COMPANY_DESCRIPTION = 'ResonEcho builds technology that keeps people connected when traditional networks fail.';

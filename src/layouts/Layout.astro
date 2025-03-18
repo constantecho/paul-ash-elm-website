@@ -1,0 +1,63 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	hideHero?: boolean;
+}
+
+const { 
+	title = SITE_TITLE, 
+	description = SITE_DESCRIPTION,
+	image,
+	hideHero = false
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			{!hideHero && (
+				<div class="container hero-container">
+					<h1>{title}</h1>
+					{description && <p class="description">{description}</p>}
+				</div>
+			)}
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.container {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+	
+	.hero-container {
+		text-align: center;
+		padding: 3rem 1rem;
+	}
+	
+	.hero-container h1 {
+		margin-bottom: 1rem;
+	}
+	
+	.description {
+		max-width: 800px;
+		margin: 0 auto;
+		color: rgb(var(--gray));
+	}
+</style>

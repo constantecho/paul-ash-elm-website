@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Contact Us"
+	description="Get in Touch with ResonEcho"
+>
+	<div class="contact-intro">
+		<p>
+			We'd love to hear from you! Whether you're interested in learning more about our technology, 
+			exploring investment opportunities, or discussing potential partnerships, please don't hesitate 
+			to reach out.
+		</p>
+	</div>
+
+	<div class="contact-container">
+		<div class="contact-info">
+			<h2>Contact Information</h2>
+			<div class="info-item">
+				<h3>Email</h3>
+				<p><a href="mailto:info@resonecho.com">info@resonecho.com</a></p>
+			</div>
+			<div class="info-item">
+				<h3>Location</h3>
+				<p>Manitoba, Canada</p>
+			</div>
+			<div class="info-item">
+				<h3>Connect</h3>
+				<div class="social-links">
+					<a href="https://twitter.com/" target="_blank">Twitter</a>
+					<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+				</div>
+			</div>
+			<div class="contact-interest">
+				<h3>I'm interested in...</h3>
+				<ul>
+					<li>Learning more about Swagger-Saphron</li>
+					<li>Investment opportunities</li>
+					<li>Partnership possibilities</li>
+					<li>Career opportunities</li>
+					<li>Beta testing</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="contact-form">
+			<h2>Send a Message</h2>
+			<form id="contact-form" action="#" method="POST">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" required>
+				</div>
+				
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="6" required></textarea>
+				</div>
+				
+				<div class="form-group">
+					<label for="interest">I'm interested in:</label>
+					<select id="interest" name="interest">
+						<option value="information">Learning more about Swagger-Saphron</option>
+						<option value="investment">Investment opportunities</option>
+						<option value="partnership">Partnership possibilities</option>
+						<option value="career">Career opportunities</option>
+						<option value="beta">Beta testing</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+				
+				<button type="submit" class="cta-button">Send Message</button>
+			</form>
+		</div>
+	</div>
+</Layout>
+
+<script>
+	// Simple form validation
+	document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+		e.preventDefault();
+		
+		// In a real implementation, you would send the form data to your server
+		// or a form submission service here.
+		
+		// For demo purposes, show a success message
+		alert('Thank you for your message! We will get back to you soon.');
+		this.reset();
+	});
+</script>
+
+<style>
+	.contact-intro {
+		max-width: 800px;
+		margin: 0 auto 4rem;
+		text-align: center;
+	}
+
+	.contact-intro p {
+		font-size: 1.2rem;
+		line-height: 1.6;
+	}
+
+	.contact-container {
+		display: grid;
+		grid-template-columns: 1fr 1.5fr;
+		gap: 3rem;
+		max-width: 1080px;
+		margin: 0 auto;
+	}
+
+	.contact-info h2,
+	.contact-form h2 {
+		text-align: left;
+		margin-bottom: 1.5rem;
+	}
+
+	.info-item {
+		margin-bottom: 2rem;
+	}
+
+	.info-item h3 {
+		margin-bottom: 0.5rem;
+		color: var(--primary);
+		font-size: 1.2rem;
+	}
+
+	.social-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.social-links a {
+		display: inline-block;
+		padding: 0.5rem 1rem;
+		background-color: rgba(var(--gray-light), 0.7);
+		border-radius: 4px;
+		transition: background-color 0.2s ease;
+	}
+
+	.social-links a:hover {
+		background-color: rgba(var(--gray-light), 1);
+		text-decoration: none;
+	}
+
+	.contact-interest ul {
+		padding-left: 1.5rem;
+	}
+
+	.contact-interest li {
+		margin-bottom: 0.5rem;
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-weight: 500;
+	}
+
+	input,
+	textarea,
+	select {
+		width: 100%;
+		padding: 0.75rem;
+		border: 1px solid rgba(var(--gray), 0.3);
+		border-radius: 4px;
+		font-family: inherit;
+		font-size: 1rem;
+	}
+
+	input:focus,
+	textarea:focus,
+	select:focus {
+		outline: none;
+		border-color: var(--primary);
+		box-shadow: 0 0 0 2px rgba(58, 92, 201, 0.2);
+	}
+
+	button[type="submit"] {
+		display: inline-block;
+		background-color: var(--primary);
+		color: white;
+		padding: 0.8rem 2rem;
+		border: none;
+		border-radius: 4px;
+		font-weight: bold;
+		font-size: 1.1rem;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	button[type="submit"]:hover {
+		background-color: var(--primary-dark);
+	}
+
+	@media (max-width: 768px) {
+		.contact-container {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-info {
+			order: 2;
+		}
+
+		.contact-form {
+			order: 1;
+		}
+	}
+</style>

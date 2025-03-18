@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="Swagger-Saphron"
+	description="Stay Connected Without Networks"
+>
+	<div class="product-section">
+		<div class="product-overview">
+			<p class="product-intro">
+				Our flagship application enables seamless communication where traditional networks fail. 
+				Using innovative BLE mesh technology, Swagger-Saphron creates a decentralized network between 
+				devices, allowing messages, location data, and alerts to hop from phone to phone until they 
+				reach their destination.
+			</p>
+		</div>
+	</div>
+
+	<div class="features-section">
+		<h2>Key Features</h2>
+		<div class="feature-grid">
+			<div class="feature-item">
+				<h3>Offline Messaging</h3>
+				<p>Exchange text messages without cellular or WiFi connectivity, maintaining communication with your group.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Real-time Location Sharing</h3>
+				<p>Find friends and navigate to meeting points using the mesh network to propagate location data.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Emergency Alerts</h3>
+				<p>Priority routing ensures critical messages reach recipients even in challenging network conditions.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Battery Optimization</h3>
+				<p>Adaptive algorithms maximize battery life by intelligently managing power consumption based on network conditions.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Automatic Mesh Formation</h3>
+				<p>Seamlessly join and contribute to the network without complex configuration or setup processes.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Privacy Controls</h3>
+				<p>Granular settings for location sharing and visibility give you complete control over your personal data.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="use-cases-section">
+		<h2>Use Cases</h2>
+		<div class="use-cases-grid">
+			<div class="use-case">
+				<h3>Festivals & Concerts</h3>
+				<p>
+					Never lose track of your friends in crowded venues where cell networks are overloaded. 
+					Coordinate meetup locations and stay in touch throughout the event.
+				</p>
+			</div>
+			<div class="use-case">
+				<h3>Hiking & Outdoor Activities</h3>
+				<p>
+					Stay connected with your group while exploring remote areas without cellular coverage. 
+					Share your location and important messages even deep in the wilderness.
+				</p>
+			</div>
+			<div class="use-case">
+				<h3>Emergency Response</h3>
+				<p>
+					Maintain critical communications during disasters when traditional infrastructure fails. 
+					Coordinate with others in your area and share vital information.
+				</p>
+			</div>
+			<div class="use-case">
+				<h3>Large Campus Environments</h3>
+				<p>
+					Create reliable communication networks across sprawling campuses, including underground areas 
+					or buildings with poor signal penetration.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="technical-highlights">
+		<h2>Technical Highlights</h2>
+		<div class="highlights-content">
+			<div class="highlight-item">
+				<h3>Self-healing Network</h3>
+				<p>
+					Our proprietary routing algorithms automatically adapt to changing conditions, 
+					rerouting messages when devices move or lose connectivity to ensure reliable delivery.
+				</p>
+			</div>
+			<div class="highlight-item">
+				<h3>Extended Range</h3>
+				<p>
+					Messages can travel distances far beyond typical Bluetooth range by hopping through 
+					multiple devices, extending your connectivity significantly.
+				</p>
+			</div>
+			<div class="highlight-item">
+				<h3>Minimal Configuration</h3>
+				<p>
+					The app works right out of the box with intelligent defaults that require minimal 
+					user configuration while still providing advanced options for power users.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="call-to-action">
+		<h2>Interested in Swagger-Saphron?</h2>
+		<p>
+			We're currently in development with a targeted release date coming soon. Contact us to learn more 
+			about investment opportunities or to sign up for our beta testing program.
+		</p>
+		<a href="/contact" class="cta-button">Contact Us</a>
+	</div>
+</Layout>
+
+<style>
+	.product-section {
+		padding: 2rem 0 4rem;
+	}
+
+	.product-overview {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.product-intro {
+		font-size: 1.3rem;
+		line-height: 1.6;
+	}
+
+	.features-section, 
+	.use-cases-section, 
+	.technical-highlights, 
+	.call-to-action {
+		margin: 4rem 0;
+	}
+
+	h2 {
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.use-cases-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.use-case {
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		background-color: white;
+	}
+
+	.use-case h3 {
+		color: var(--primary);
+		margin-top: 0;
+	}
+
+	.highlights-content {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.highlight-item {
+		background-color: rgba(var(--gray-light), 0.4);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+
+	.highlight-item h3 {
+		color: var(--primary);
+		margin-top: 0;
+	}
+
+	.call-to-action {
+		text-align: center;
+		padding: 3rem;
+		background-color: rgba(var(--gray-light), 0.5);
+		border-radius: 8px;
+	}
+
+	.call-to-action p {
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.product-intro {
+			font-size: 1.1rem;
+		}
+
+		.highlights-content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

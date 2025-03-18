@@ -1,49 +1,145 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, COMPANY_TAGLINE, COMPANY_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout hideHero={true}>
+	<section class="hero">
+		<h1>{COMPANY_TAGLINE}</h1>
+		<p>{COMPANY_DESCRIPTION}</p>
+		<div class="hero-buttons">
+			<a href="/product" class="cta-button">Learn About Swagger-Saphron</a>
+		</div>
+	</section>
+
+	<section class="section">
+		<h2>Why ResonEcho?</h2>
+		<div class="feature-grid">
+			<div class="feature-item">
+				<h3>Connect Without Networks</h3>
+				<p>Our BLE mesh technology enables reliable communication even in areas with no cellular coverage or Wi-Fi access.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Battery Optimized</h3>
+				<p>Advanced algorithms ensure efficient power consumption, maximizing battery life during extended use.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Privacy Focused</h3>
+				<p>Granular controls allow users to determine exactly what information they share and with whom.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section use-cases">
+		<h2>Perfect For</h2>
+		<div class="feature-grid">
+			<div class="feature-item">
+				<h3>Festivals & Events</h3>
+				<p>Stay connected with friends at crowded events where networks are congested or unavailable.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Remote Adventures</h3>
+				<p>Maintain contact with your group during hiking, camping, or other outdoor activities in areas without coverage.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Emergency Situations</h3>
+				<p>Communicate when traditional networks are down due to natural disasters or other emergencies.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="expertise-section">
+		<h2>Our Expertise</h2>
+		<div class="expertise-content">
+			<div>
+				<p>At ResonEcho, we bring together deep technical knowledge across multiple disciplines:</p>
+				<ul>
+					<li><strong>System Architecture:</strong> Designing resilient mesh networks that scale</li>
+					<li><strong>Mobile Development:</strong> Building efficient applications optimized for Android and iOS</li>
+					<li><strong>User Experience:</strong> Creating intuitive interfaces that make complex technology accessible</li>
+					<li><strong>Algorithm Design:</strong> Developing proprietary routing technologies for optimal message delivery</li>
+					<li><strong>Battery Optimization:</strong> Ensuring practical usability through careful power management</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta-section">
+		<h2>Ready to stay connected anywhere?</h2>
+		<p>Learn more about our flagship product Swagger-Saphron and how it can transform your connectivity experience.</p>
+		<a href="/product" class="cta-button">Explore Swagger-Saphron</a>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 6rem 0 4rem;
+	}
+
+	.hero h1 {
+		font-size: 3.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.hero p {
+		max-width: 800px;
+		margin: 0 auto 2rem;
+		font-size: 1.5rem;
+		color: rgb(var(--gray));
+	}
+
+	.hero-buttons {
+		margin-top: 2rem;
+	}
+
+	.use-cases {
+		margin: 6rem 0;
+	}
+
+	.expertise-content {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.expertise-content ul {
+		margin-top: 1.5rem;
+		padding-left: 1.5rem;
+	}
+
+	.expertise-content li {
+		margin-bottom: 0.5rem;
+	}
+
+	.cta-section {
+		text-align: center;
+		margin: 6rem 0 3rem;
+		padding: 3rem;
+		background-color: rgba(var(--gray-light), 0.5);
+		border-radius: 8px;
+	}
+
+	.cta-section h2 {
+		margin-bottom: 1rem;
+	}
+
+	.cta-section p {
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+
+		.hero p {
+			font-size: 1.2rem;
+		}
+
+		.expertise-content {
+			flex-direction: column;
+		}
+	}
+</style>
