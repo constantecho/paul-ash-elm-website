@@ -1,12 +1,13 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_DATA } from '../consts';
 ---
 
 <header>
 	<nav>
 		<div class="logo">
-			<h2><a href="/">{SITE_TITLE}</a></h2>
+			<img src="/logo.png" alt="Ash & Elm Contracting" class="logo-image" />
+			<h2><a href="/">{SITE_DATA.name}</a></h2>
 		</div>
 		<div class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
 			<span></span>
@@ -15,10 +16,12 @@ import { SITE_TITLE } from '../consts';
 		</div>
 		<div class="internal-links" id="menu-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/product">Product</HeaderLink>
-			<HeaderLink href="/technology">Technology</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/services">Services</HeaderLink>
 			<HeaderLink href="/contact">Contact</HeaderLink>
+			<div class="cta-buttons">
+				<a href={`tel:${SITE_DATA.phone.raw}`} class="cta-call">Call {SITE_DATA.phone.display}</a>
+				<a href="/contact#quote" class="cta-quote">Request Quote</a>
+			</div>
 		</div>
 	</nav>
 </header>
@@ -33,6 +36,17 @@ import { SITE_TITLE } from '../consts';
 		z-index: 100;
 	}
 	
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.logo-image {
+		height: 40px;
+		width: auto;
+	}
+
 	h2 {
 		margin: 0;
 		font-size: 1.6em;
@@ -55,7 +69,41 @@ import { SITE_TITLE } from '../consts';
 	
 	.internal-links {
 		display: flex;
+		align-items: center;
 		gap: 1rem;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 0.5rem;
+		margin-left: 1rem;
+	}
+
+	.cta-call {
+		padding: 0.5rem 1rem !important;
+		background: var(--green-700);
+		color: white !important;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.cta-call:hover {
+		background: var(--green-800) !important;
+	}
+
+	.cta-quote {
+		padding: 0.5rem 1rem !important;
+		border: 2px solid var(--green-700);
+		color: var(--green-700) !important;
+		border-radius: 6px;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.cta-quote:hover {
+		background: var(--green-700) !important;
+		color: white !important;
 	}
 	
 	nav a {
@@ -112,6 +160,34 @@ import { SITE_TITLE } from '../consts';
 			display: none;
 			width: 100%;
 			z-index: 100;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			margin-left: 0;
+			width: 100%;
+			gap: 0;
+		}
+
+		.cta-call,
+		.cta-quote {
+			padding: 1rem !important;
+			border-top: 1px solid rgba(var(--gray-light), 1);
+			width: 100%;
+			text-align: center;
+			border-radius: 0 !important;
+		}
+
+		.logo {
+			gap: 0.5rem;
+		}
+
+		.logo-image {
+			height: 32px;
+		}
+
+		h2 {
+			font-size: 1.3em;
 		}
 		
 		.internal-links a {

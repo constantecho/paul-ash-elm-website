@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_DATA } from '../consts';
+---
+
+<Layout title="Page Not Found" description="The page you're looking for doesn't exist.">
+	<section class="error-section">
+		<h1>Page Not Found</h1>
+		<p>Sorry, the page you're looking for doesn't exist or may have been moved.</p>
+
+		<div class="error-actions">
+			<a href="/" class="cta-button">Go Home</a>
+			<a href="/contact" class="secondary-button">Contact Us</a>
+		</div>
+
+		<div class="helpful-links">
+			<h3>Looking for something specific?</h3>
+			<ul>
+				<li><a href="/services">View Our Services</a></li>
+				<li><a href="/contact">Request a Quote</a></li>
+				<li><a href={`tel:${SITE_DATA.phone.raw}`}>Call {SITE_DATA.phone.display}</a></li>
+				<li><a href={`mailto:${SITE_DATA.email}`}>Email Us</a></li>
+			</ul>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.error-section {
+		text-align: center;
+		padding: 4rem 0;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.error-section h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+		color: var(--green-700);
+	}
+
+	.error-section p {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		color: rgb(var(--gray));
+	}
+
+	.error-actions {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 3rem;
+	}
+
+	.helpful-links {
+		margin-top: 3rem;
+		text-align: left;
+	}
+
+	.helpful-links h3 {
+		color: var(--green-700);
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	.helpful-links ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.helpful-links li {
+		margin-bottom: 0.5rem;
+		padding: 0.5rem;
+		background-color: rgba(var(--gray-light), 0.3);
+		border-radius: 4px;
+	}
+
+	.helpful-links a {
+		color: var(--green-700);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.helpful-links a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.error-section h1 {
+			font-size: 2rem;
+		}
+
+		.error-actions {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.helpful-links {
+			text-align: center;
+		}
+	}
+</style>

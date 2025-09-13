@@ -1,0 +1,209 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_DATA } from '../consts';
+---
+
+<Layout title="Services" description="Professional finish carpentry and home improvement services in Virden, Manitoba and surrounding areas.">
+	<section class="services-hero">
+		<h1>Our Services</h1>
+		<p>Professional craftsmanship for your home improvement needs</p>
+	</section>
+
+	<section class="services-grid">
+		{SITE_DATA.services.map(service => (
+			<div class="service-detail">
+				<h2>{service.name}</h2>
+				<p>{service.description}</p>
+				<ul class="service-benefits">
+					{service.name === 'Finish Carpentry' && (
+						<>
+							<li>Crown molding and baseboards</li>
+							<li>Window and door casing</li>
+							<li>Wainscoting and chair rails</li>
+							<li>Custom millwork and profiles</li>
+						</>
+					)}
+					{service.name === 'Doors & Hardware' && (
+						<>
+							<li>Interior and exterior door installation</li>
+							<li>Hardware selection and fitting</li>
+							<li>Door frame repair and adjustment</li>
+							<li>Weatherstripping and sealing</li>
+						</>
+					)}
+					{service.name === 'Custom Shelving & Built-ins' && (
+						<>
+							<li>Custom closet organization</li>
+							<li>Built-in bookcases and entertainment centers</li>
+							<li>Kitchen and bathroom storage solutions</li>
+							<li>Office and workspace organization</li>
+						</>
+					)}
+					{service.name === 'Deck & Fence Repairs' && (
+						<>
+							<li>Deck board replacement and refinishing</li>
+							<li>Railing repair and replacement</li>
+							<li>Fence panel and post repairs</li>
+							<li>Structural reinforcement</li>
+						</>
+					)}
+					{service.name === 'Small Renovations' && (
+						<>
+							<li>Bathroom and kitchen updates</li>
+							<li>Room additions and modifications</li>
+							<li>Drywall repair and finishing</li>
+							<li>Paint preparation and priming</li>
+						</>
+					)}
+					{service.name === 'Flooring Repairs & Transitions' && (
+						<>
+							<li>Hardwood floor repairs and patching</li>
+							<li>Transition strips between floor types</li>
+							<li>Subfloor repair and leveling</li>
+							<li>Trim and molding around flooring</li>
+						</>
+					)}
+				</ul>
+			</div>
+		))}
+	</section>
+
+	<section class="process-section">
+		<h2>Our Process</h2>
+		<div class="process-steps">
+			<div class="process-step">
+				<h3>1. Consultation</h3>
+				<p>Free on-site consultation to understand your vision and requirements</p>
+			</div>
+			<div class="process-step">
+				<h3>2. Quote</h3>
+				<p>Detailed written estimate with materials, labor, and timeline</p>
+			</div>
+			<div class="process-step">
+				<h3>3. Execution</h3>
+				<p>Quality workmanship with regular communication and clean-up</p>
+			</div>
+			<div class="process-step">
+				<h3>4. Completion</h3>
+				<p>Final walkthrough and satisfaction guarantee</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta-section">
+		<h2>Ready to Get Started?</h2>
+		<p>Contact us today for your free consultation and quote</p>
+		<div class="cta-buttons">
+			<a href={`tel:${SITE_DATA.phone.raw}`} class="cta-button">Call {SITE_DATA.phone.display}</a>
+			<a href="/contact" class="secondary-button">Request Quote</a>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.services-hero {
+		text-align: center;
+		padding: 2rem 0 3rem;
+	}
+
+	.services-hero h1 {
+		margin-bottom: 1rem;
+	}
+
+	.services-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: 3rem;
+		margin: 3rem 0;
+	}
+
+	.service-detail {
+		background-color: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		border-left: 4px solid var(--green-700);
+	}
+
+	.service-detail h2 {
+		color: var(--green-700);
+		margin-bottom: 1rem;
+	}
+
+	.service-benefits {
+		margin-top: 1.5rem;
+		padding-left: 1.2rem;
+	}
+
+	.service-benefits li {
+		margin-bottom: 0.5rem;
+		color: rgb(var(--gray-dark));
+	}
+
+	.process-section {
+		background-color: rgba(var(--gray-light), 0.4);
+		padding: 3rem;
+		border-radius: 8px;
+		margin: 4rem 0;
+	}
+
+	.process-section h2 {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+	}
+
+	.process-step {
+		text-align: center;
+		padding: 1.5rem;
+		background-color: white;
+		border-radius: 8px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	}
+
+	.process-step h3 {
+		color: var(--green-700);
+		margin-bottom: 1rem;
+	}
+
+	.cta-section {
+		text-align: center;
+		padding: 3rem 0;
+	}
+
+	.cta-buttons {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.services-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.service-detail {
+			padding: 1.5rem;
+		}
+
+		.process-steps {
+			grid-template-columns: 1fr;
+		}
+
+		.process-section {
+			padding: 2rem 1.5rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>
