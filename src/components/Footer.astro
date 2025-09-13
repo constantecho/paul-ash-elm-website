@@ -1,14 +1,12 @@
 ---
-import { SITE_DATA } from '../consts';
 const today = new Date();
 ---
 
 <footer>
 	<div class="footer-content">
 		<div class="footer-logo">
-			<img src="/logo.png" alt="Ash & Elm Contracting" class="footer-logo-image" />
-			<h3>{SITE_DATA.name}</h3>
-			<p>{SITE_DATA.tagline}</p>
+			<h3>ResonEcho</h3>
+			<p>Connectivity Beyond Networks</p>
 		</div>
 		
 		<div class="footer-links">
@@ -16,34 +14,26 @@ const today = new Date();
 				<h4>Pages</h4>
 				<ul>
 					<li><a href="/">Home</a></li>
-					<li><a href="/services">Services</a></li>
+					<li><a href="/product">Product</a></li>
+					<li><a href="/technology">Technology</a></li>
+					<li><a href="/about">About</a></li>
 					<li><a href="/contact">Contact</a></li>
 				</ul>
 			</div>
-
+			
 			<div class="link-group">
-				<h4>Contact Info</h4>
+				<h4>Connect</h4>
 				<ul>
-					<li><a href={`tel:${SITE_DATA.phone.raw}`}>{SITE_DATA.phone.display}</a></li>
-					<li><a href={`mailto:${SITE_DATA.email}`}>{SITE_DATA.email}</a></li>
-					<li>{SITE_DATA.address.city}, {SITE_DATA.address.province}</li>
-				</ul>
-			</div>
-
-			<div class="link-group">
-				<h4>Service Area</h4>
-				<ul>
-					{SITE_DATA.serviceArea.map(area => (
-						<li>{area}</li>
-					))}
+					<li><a href="mailto:info@resonecho.com">Email Us</a></li>
+					<li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+					<li><a href="https://linkedin.com/" target="_blank">LinkedIn</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
 	
 	<div class="footer-bottom">
-		<p>&copy; {today.getFullYear()} {SITE_DATA.name}. All rights reserved.</p>
-		<p class="business-info">Fully Insured • GST: {SITE_DATA.gst} • Payments: {SITE_DATA.paymentMethods.join(', ')}</p>
+		<p>&copy; {today.getFullYear()} ResonEcho. All rights reserved.</p>
 	</div>
 </footer>
 
@@ -63,22 +53,10 @@ const today = new Date();
 		gap: 2rem;
 	}
 	
-	.footer-logo {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.5rem;
-	}
-
-	.footer-logo-image {
-		height: 48px;
-		width: auto;
-	}
-
 	.footer-logo h3 {
 		margin: 0;
 		font-size: 1.8rem;
-		color: var(--green-700);
+		color: var(--primary);
 	}
 	
 	.footer-logo p {
@@ -124,13 +102,6 @@ const today = new Date();
 		text-align: center;
 		font-size: 0.9rem;
 		opacity: 0.8;
-	}
-
-	.business-info {
-		margin-top: 0.5rem;
-		font-size: 0.8rem;
-		color: var(--green-700);
-		font-weight: 500;
 	}
 	
 	@media (max-width: 768px) {

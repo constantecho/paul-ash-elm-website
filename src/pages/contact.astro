@@ -1,200 +1,189 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_DATA } from '../consts';
 ---
 
 <Layout
 	title="Contact Us"
-	description="Get a free quote for your carpentry project in Virden, Manitoba and surrounding areas."
+	description="Get in Touch with ResonEcho"
 >
 	<div class="contact-intro">
-		<h1>Get Your Free Quote</h1>
 		<p>
-			Ready to start your carpentry project? Contact {SITE_DATA.name} for a free consultation and detailed quote. We serve {SITE_DATA.serviceArea.join(', ')} with professional finish carpentry and home improvement services.
+			We're building the future of decentralized communication and looking for partners who share our vision. Whether you're interested in investment opportunities, technical collaboration, early testing, or simply learning more about our technology, we'd love to hear from you.
 		</p>
 	</div>
 
-	<div class="contact-methods-section">
-		<h2>Contact Information</h2>
-
-		<div class="contact-grid">
-			<div class="contact-card">
-				<h3>📞 Call Us</h3>
-				<p><a href={`tel:${SITE_DATA.phone.raw}`}>{SITE_DATA.phone.display}</a></p>
-				<p class="contact-note">Call for immediate assistance or urgent quotes</p>
+	<div class="participation-section">
+		<h2>How You Can Participate</h2>
+		
+		<div class="option-grid">
+			<div class="option-card">
+				<div class="icon">
+					<!-- Investment icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="m5 12 7-4 7 4"/><path d="M5 16l7 4 7-4"/><path d="M5 20l7 4 7-4"/><path d="M5 8, 7 4 7-4"/></svg>
+				</div>
+				<h3>Investment Opportunities</h3>
+				<p>Help accelerate our development and bring this technology to market. We're seeking funding to expand our team and complete our MVP development.</p>
+				<a href="#contact-form" class="option-link" data-interest="investment">Interested in investment details?</a>
 			</div>
-
-			<div class="contact-card">
-				<h3>✉️ Email Us</h3>
-				<p><a href={`mailto:${SITE_DATA.email}`}>{SITE_DATA.email}</a></p>
-				<p class="contact-note">Best for detailed project descriptions and photos</p>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Collaboration icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="10"/><circle cx="6" cy="15" r="3"/><line x1="6" y1="12" x2="6" y2="15"/><circle cx="18" cy="15" r="3"/><line x1="18" y1="12" x2="18" y2="15"/><path d="M12 10L6 12 18 12"/></svg>
+				</div>
+				<h3>Technical Collaboration</h3>
+				<p>Have expertise in BLE, mesh networking, or mobile development? We're looking for collaborators who can help advance our technology.</p>
+				<a href="#contact-form" class="option-link" data-interest="technical">Want to collaborate technically?</a>
 			</div>
-
-			<div class="contact-card">
-				<h3>📍 Service Area</h3>
-				<p>{SITE_DATA.serviceArea.join(' • ')}</p>
-				<p class="contact-note">Serving {SITE_DATA.address.city}, {SITE_DATA.address.province} and surrounding areas</p>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Testing icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"/></svg>
+				</div>
+				<h3>Early Testing</h3>
+				<p>Sign up to be among the first to test our technology when it's ready for field trials. Help shape the future of mesh communication.</p>
+				<a href="#contact-form" class="option-link" data-interest="testing">Interested in early testing?</a>
 			</div>
-
-			<div class="contact-card">
-				<h3>🛡️ Business Details</h3>
-				<p>GST: {SITE_DATA.gst}</p>
-				<p>Fully Insured • Owner-Operated</p>
-				<p class="contact-note">Payment: {SITE_DATA.paymentMethods.join(', ')}</p>
+			
+			<div class="option-card">
+				<div class="icon">
+					<!-- Naming icon -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>
+				</div>
+				<h3>Help Name Our App</h3>
+				<p>Swagger-Saphron is our project codename. Have ideas for the perfect name for our revolutionary mesh communication app?</p>
+				<a href="#contact-form" class="option-link" data-interest="naming">Have naming suggestions?</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="contact-form-section" id="quote">
-		<h2>Request Your Free Quote</h2>
-
-		<form id="contactForm" action={`mailto:${SITE_DATA.email}`} method="get">
-			<!-- Honeypot field to prevent spam -->
-			<div class="form-group" style="display:none">
-				<label for="_gotcha">Leave this field empty if you're human</label>
-				<input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off">
-			</div>
-
-			<div id="form-status" class="form-status" style="display:none"></div>
+	<div class="contact-form-section" id="contact-form">
+		<h2>Reach Out</h2>
+		
+		<form id="contactForm" action="https://formspree.io/f/mnnpnegj" method="POST">
+				<!-- Honeypot field to prevent spam -->
+				<div class="form-group" style="display:none">
+					<label for="_gotcha">Leave this field empty if you're human</label>
+					<input type="text" name="_gotcha" id="_gotcha" tabindex="-1" autocomplete="off">
+				</div>
+				
+				<div id="form-status" class="form-status" style="display:none"></div>
 			<div class="form-row">
 				<div class="form-group">
 					<label for="name">Name*</label>
 					<input type="text" id="name" name="name" required minlength="2" maxlength="100">
 				</div>
-
+				
 				<div class="form-group">
-					<label for="phone">Phone*</label>
-					<input type="tel" id="phone" name="phone" required>
+					<label for="email">Email*</label>
+					<input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
 				</div>
 			</div>
-
+			
 			<div class="form-row">
 				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+					<label for="phone">Phone (optional)</label>
+					<input type="tel" id="phone" name="phone">
 				</div>
-
+				
 				<div class="form-group">
-					<label for="location">Project Location</label>
-					<input type="text" id="location" name="location" placeholder="City or general area">
+					<label for="company">Company/Organization (optional)</label>
+					<input type="text" id="company" name="company">
 				</div>
 			</div>
-
+			
 			<div class="form-group">
-				<label>Type of Project:</label>
-				<div class="service-tags">
-					<div class="service-tag" data-value="finish-carpentry">Finish Carpentry</div>
-					<div class="service-tag" data-value="doors-hardware">Doors & Hardware</div>
-					<div class="service-tag" data-value="custom-shelving">Custom Shelving</div>
-					<div class="service-tag" data-value="deck-fence">Deck/Fence Repair</div>
-					<div class="service-tag" data-value="renovation">Small Renovation</div>
-					<div class="service-tag" data-value="flooring">Flooring Repairs</div>
-					<div class="service-tag" data-value="other">Other</div>
+				<label>I'm interested in:</label>
+				<div class="interest-tags">
+					<div class="interest-tag" data-value="investment">Investment Opportunities</div>
+					<div class="interest-tag" data-value="technical">Technical Collaboration</div>
+					<div class="interest-tag" data-value="testing">Early Testing</div>
+					<div class="interest-tag" data-value="naming">App Name Suggestions</div>
+					<div class="interest-tag" data-value="general">General Inquiry</div>
 				</div>
-				<input type="hidden" id="service-type" name="service-type" value="">
+				<input type="hidden" id="interest" name="interest" value="general">
 			</div>
-
-			<div class="form-row">
-				<div class="form-group">
-					<label for="timeline">Desired Timeline</label>
-					<select id="timeline" name="timeline">
-						<option value="">Select timeline</option>
-						<option value="asap">As soon as possible</option>
-						<option value="1-2weeks">1-2 weeks</option>
-						<option value="1month">Within a month</option>
-						<option value="flexible">Flexible</option>
-					</select>
-				</div>
-
-				<div class="form-group">
-					<label for="budget">Approximate Budget</label>
-					<select id="budget" name="budget">
-						<option value="">Select budget range</option>
-						<option value="under-500">Under $500</option>
-						<option value="500-1500">$500 - $1,500</option>
-						<option value="1500-5000">$1,500 - $5,000</option>
-						<option value="over-5000">Over $5,000</option>
-						<option value="unsure">Not sure</option>
-					</select>
-				</div>
-			</div>
-
+			
 			<div class="form-group">
-				<label for="message">Project Description*</label>
-				<textarea id="message" name="message" rows="6" required placeholder="Please describe your project in detail. Include dimensions, materials preferences, and any specific requirements."></textarea>
+				<label for="message">Message*</label>
+				<textarea id="message" name="message" rows="6" required></textarea>
 			</div>
-
+			
 			<div class="form-group checkbox-group">
-				<input type="checkbox" id="consultation" name="consultation" value="yes" checked>
-				<label for="consultation">I would like a free on-site consultation</label>
+				<input type="checkbox" id="subscribe" name="subscribe" value="yes">
+				<label for="subscribe">Keep me informed about ResonEcho's development</label>
 			</div>
-
-			<button type="submit" class="cta-button">Send Quote Request</button>
+			
+			<button type="submit" class="cta-button">Send Message</button>
 		</form>
 	</div>
 
-	<div class="business-info-section">
-		<h2>Why Choose {SITE_DATA.name}?</h2>
-
+	<div class="contact-info-section">
+		<h2>Other Ways to Connect</h2>
+		
 		<div class="info-grid">
 			<div class="info-item">
-				<h3>✅ Owner-Operated</h3>
-				<p>Work directly with the craftsman. Clear communication and personal accountability on every project.</p>
+				<h3>Email</h3>
+				<p><a href="mailto:contact@resonecho.com">contact@resonecho.com</a></p>
 			</div>
-
+			
 			<div class="info-item">
-				<h3>🛡️ Fully Insured</h3>
-				<p>Your property and project are protected with comprehensive liability insurance.</p>
+				<h3>Location</h3>
+				<p>Manitoba, Canada</p>
 			</div>
-
+			
 			<div class="info-item">
-				<h3>⏰ Reliable Service</h3>
-				<p>On-time arrival and completion. We respect your schedule and keep our commitments.</p>
+				<h3>Social</h3>
+				<div class="social-links">
+					<a href="https://twitter.com/" target="_blank">Twitter</a>
+					<a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+				</div>
 			</div>
-
+			
 			<div class="info-item">
-				<h3>🏠 Local Expertise</h3>
-				<p>Familiar with local building codes and suppliers. Serving {SITE_DATA.serviceArea.join(', ')} with pride.</p>
+				<h3>Response Time</h3>
+				<p>As a small team in active development, we review all inquiries and aim to respond within 2-3 business days. For fastest response, email is recommended.</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="faq-section">
 		<h2>Frequently Asked Questions</h2>
-
+		
 		<div class="faq-container">
 			<div class="faq-item">
-				<div class="faq-question">Do you provide free quotes?</div>
+				<div class="faq-question">What stage of development is your technology in?</div>
 				<div class="faq-answer">
-					<p>Yes! All quotes are completely free with no obligation. We'll visit your project site, discuss your needs, and provide a detailed written estimate.</p>
+					<p>We're currently in the early stages of development (Phase 1-2 of a 5-phase process). We've established the application architecture and are implementing core Bluetooth functionality, with significant development milestones ahead before a functional MVP is ready.</p>
 				</div>
 			</div>
-
+			
 			<div class="faq-item">
-				<div class="faq-question">How quickly can you start my project?</div>
+				<div class="faq-question">When will your app be available for testing?</div>
 				<div class="faq-answer">
-					<p>Timeline depends on project size and current schedule. Smaller projects can often start within 1-2 weeks, while larger renovations may require more planning time. We'll provide a realistic timeline with your quote.</p>
+					<p>We're targeting initial closed beta testing in Q1-Q2 2026, depending on development progress and funding. You can sign up for early testing access using the form above, and we'll keep you updated as we approach testing phases.</p>
 				</div>
 			</div>
-
+			
 			<div class="faq-item">
-				<div class="faq-question">What payment methods do you accept?</div>
+				<div class="faq-question">Are you seeking investment?</div>
 				<div class="faq-answer">
-					<p>We accept {SITE_DATA.paymentMethods.join(', ')}. Payment schedules are typically arranged as deposit + progress payments + final payment upon completion.</p>
+					<p>Yes, we're currently open to investment opportunities to accelerate our development timeline. If you're interested in learning more, please select "Investment Opportunities" in the contact form.</p>
 				</div>
 			</div>
-
+			
 			<div class="faq-item">
-				<div class="faq-question">Do you provide materials or should I purchase them?</div>
+				<div class="faq-question">What platforms will your app support?</div>
 				<div class="faq-answer">
-					<p>We can handle material procurement for your convenience, or work with materials you've purchased. We'll discuss the best approach based on your project and preferences during the consultation.</p>
+					<p>Our initial development is focused on Android, with iOS planned for future implementation after our core technology is proven.</p>
 				</div>
 			</div>
-
+			
 			<div class="faq-item">
-				<div class="faq-question">Are you licensed and insured?</div>
+				<div class="faq-question">How can I contribute if I have technical expertise?</div>
 				<div class="faq-answer">
-					<p>Yes, we are fully insured with comprehensive liability coverage. GST registration: {SITE_DATA.gst}. We follow all local building codes and best practices.</p>
+					<p>We're looking for collaborators with experience in BLE, mesh networking, mobile development, and battery optimization. Please reach out through our contact form with details about your background and how you'd like to contribute.</p>
 				</div>
 			</div>
 		</div>
@@ -213,71 +202,18 @@ import { SITE_DATA } from '../consts';
 		line-height: 1.6;
 	}
 	
-	.contact-methods-section,
+	.participation-section,
 	.contact-form-section,
-	.business-info-section,
+	.contact-info-section,
 	.faq-section {
 		margin: 5rem 0;
 	}
-
-	.contact-grid {
+	
+	.option-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
 		margin: 2rem 0;
-	}
-
-	.contact-card {
-		background-color: white;
-		padding: 2rem;
-		border-radius: 8px;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		text-align: center;
-		border-left: 4px solid var(--green-700);
-	}
-
-	.contact-card h3 {
-		color: var(--green-700);
-		margin-bottom: 1rem;
-		font-size: 1.2rem;
-	}
-
-	.contact-card a {
-		font-weight: 600;
-		color: var(--green-700);
-		font-size: 1.1rem;
-	}
-
-	.contact-note {
-		font-size: 0.9rem;
-		color: rgb(var(--gray));
-		margin-top: 0.5rem;
-	}
-
-	.service-tags {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		margin-bottom: 0.5rem;
-	}
-
-	.service-tag {
-		display: inline-block;
-		padding: 0.5rem 1rem;
-		border-radius: 20px;
-		font-size: 0.9rem;
-		margin-bottom: 0.5rem;
-		background-color: rgba(var(--gray-light), 0.7);
-		cursor: pointer;
-		transition: all 0.2s ease;
-		border: 2px solid transparent;
-	}
-
-	.service-tag:hover,
-	.service-tag.selected {
-		background-color: rgba(var(--green-700), 0.1);
-		color: var(--green-700);
-		border-color: var(--green-700);
 	}
 	
 	.form-row {
@@ -404,103 +340,148 @@ import { SITE_DATA } from '../consts';
 	}
 	
 	@media (max-width: 768px) {
-		.contact-grid {
+		.option-grid {
 			grid-template-columns: 1fr;
 		}
-
-		.contact-card {
-			padding: 1.5rem;
-		}
-
+		
 		.form-row {
 			grid-template-columns: 1fr;
 			gap: 0;
 		}
-
+		
 		.info-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.service-tags {
-			justify-content: center;
-		}
-
-		.service-tag {
-			font-size: 0.8rem;
-			padding: 0.4rem 0.8rem;
 		}
 	}
 </style>
 
 <script>
-	// Carpentry form handling
+	// Dynamic form handling
 	document.addEventListener('DOMContentLoaded', function() {
-		// Service tag selection
-		document.querySelectorAll('.service-tag').forEach(function(tag) {
-			tag.addEventListener('click', function() {
-				// Remove selection from all tags
-				document.querySelectorAll('.service-tag').forEach(t => {
-					t.classList.remove('selected');
+		// Option card linking to form
+		document.querySelectorAll('.option-link').forEach(function(link) {
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+				const interest = this.getAttribute('data-interest');
+				
+				// Select the corresponding interest tag
+				document.querySelectorAll('.interest-tag').forEach(tag => {
+					tag.classList.remove('selected');
+					if(tag.getAttribute('data-value') === interest) {
+						tag.classList.add('selected');
+					}
 				});
-
-				// Add selection to clicked tag
-				this.classList.add('selected');
-
-				// Update hidden input
-				const serviceType = this.getAttribute('data-value');
-				document.getElementById('service-type').value = serviceType;
+				
+				// Set the hidden input value
+				document.getElementById('interest').value = interest;
+				
+				// Update placeholder text
+				updatePlaceholder(interest);
+				
+				// Scroll to form
+				document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'});
 			});
 		});
-
-		// Form submission handling with mailto fallback
+		
+		// Interest tag selection
+		document.querySelectorAll('.interest-tag').forEach(function(tag) {
+			tag.addEventListener('click', function() {
+				// Remove selection from all tags
+				document.querySelectorAll('.interest-tag').forEach(t => {
+					t.classList.remove('selected');
+				});
+				
+				// Add selection to clicked tag
+				this.classList.add('selected');
+				
+				// Update hidden input
+				const interest = this.getAttribute('data-value');
+				document.getElementById('interest').value = interest;
+				
+				// Update placeholder
+				updatePlaceholder(interest);
+			});
+		});
+		
+		// Select default interest (general)
+		document.querySelector('.interest-tag[data-value="general"]').classList.add('selected');
+		
+		// Check for URL parameter for interest
+		const urlParams = new URLSearchParams(window.location.search);
+		const interestParam = urlParams.get('interest');
+		
+		if(interestParam) {
+			const interestTag = document.querySelector(`.interest-tag[data-value="${interestParam}"]`);
+			if(interestTag) {
+				// Simulate click on the appropriate tag
+				interestTag.click();
+			}
+		}
+		
+		// Form submission handling with Formspree
 		document.getElementById('contactForm').addEventListener('submit', function(e) {
 			e.preventDefault();
-
-			// Get form data
+			
+			// Get the form data
 			const formData = new FormData(this);
-
-			// Build email subject and body
-			const name = formData.get('name') || '';
-			const phone = formData.get('phone') || '';
-			const email = formData.get('email') || '';
-			const location = formData.get('location') || '';
-			const serviceType = formData.get('service-type') || '';
-			const timeline = formData.get('timeline') || '';
-			const budget = formData.get('budget') || '';
-			const message = formData.get('message') || '';
-			const consultation = formData.get('consultation') || '';
-
-			const subject = `Quote Request from ${name}`;
-			const body = `
-Name: ${name}
-Phone: ${phone}
-Email: ${email}
-Location: ${location}
-Service Type: ${serviceType}
-Timeline: ${timeline}
-Budget: ${budget}
-Consultation Requested: ${consultation ? 'Yes' : 'No'}
-
-Project Description:
-${message}
-
----
-Sent via ash-elm.ca contact form
-			`.trim();
-
-			// Create mailto URL
-			const mailtoUrl = `mailto:${this.action.replace('mailto:', '')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-			// Open email client
-			window.location.href = mailtoUrl;
-
-			// Show success message
-			const statusDiv = document.getElementById('form-status');
-			statusDiv.innerHTML = '<div class="success-message">Your email client should open with the quote request. If it doesn\'t, please copy the details and send to ' + this.action.replace('mailto:', '') + '</div>';
-			statusDiv.style.display = 'block';
-			statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+			
+			// Send the form data to Formspree
+			fetch(this.action, {
+				method: 'POST',
+				body: formData,
+				headers: {
+					'Accept': 'application/json'
+				}
+			})
+			.then(response => {
+				if (response.ok) {
+					// Success message
+					// Show success message in form instead of alert
+						const statusDiv = document.getElementById('form-status');
+						statusDiv.innerHTML = '<div class="success-message">Thank you for your message! We will get back to you soon.</div>';
+						statusDiv.style.display = 'block';
+						
+						// Scroll to status message
+						statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+					this.reset();
+					
+					// Reset interest selection to general
+					document.querySelectorAll('.interest-tag').forEach(tag => {
+						tag.classList.remove('selected');
+						if(tag.getAttribute('data-value') === 'general') {
+							tag.classList.add('selected');
+						}
+					});
+					document.getElementById('interest').value = 'general';
+					updatePlaceholder('general');
+				} else {
+					// Error handling
+					response.json().then(data => {
+						if (Object.hasOwn(data, 'errors')) {
+							const statusDiv = document.getElementById('form-status');
+								const errorMessage = data["errors"].map(error => error["message"]).join(", ");
+								statusDiv.innerHTML = `<div class="error-message">${errorMessage}</div>`;
+								statusDiv.style.display = 'block';
+								statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+						} else {
+							const statusDiv = document.getElementById('form-status');
+								statusDiv.innerHTML = '<div class="error-message">Oops! There was a problem submitting your form. Please try again.</div>';
+								statusDiv.style.display = 'block';
+								statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+						}
+					});
+				}
+			})
+			.catch(error => {
+				// Network error handling
+				const statusDiv = document.getElementById('form-status');
+					statusDiv.innerHTML = '<div class="error-message">Oops! There was a network error. Please check your connection and try again.</div>';
+					statusDiv.style.display = 'block';
+					statusDiv.scrollIntoView({behavior: 'smooth', block: 'center'});
+				console.error(error);
+			});
 		});
-
+		
 		// FAQ accordion functionality
 		document.querySelectorAll('.faq-question').forEach(function(question) {
 			question.addEventListener('click', function() {
@@ -508,5 +489,22 @@ Sent via ash-elm.ca contact form
 				faqItem.classList.toggle('active');
 			});
 		});
+		
+		// Function to update message placeholder based on interest
+		function updatePlaceholder(interest) {
+			const messageField = document.getElementById('message');
+			const placeholders = {
+				investment: "Please tell us about your investment background and interests. What aspects of ResonEcho's vision are you most excited about?",
+				technical: "Share your technical background and how you think you could contribute to our mesh networking technology development.",
+				testing: "What use cases are you most interested in? Do you have specific environments where you'd like to test our technology?",
+				naming: "What name do you suggest for our app and why? What does it convey about the technology?",
+				general: "How can we help you? Please provide details about your inquiry."
+			};
+			
+			messageField.placeholder = placeholders[interest] || placeholders.general;
+		}
+		
+		// Initialize with general placeholder
+		updatePlaceholder('general');
 	});
 </script>

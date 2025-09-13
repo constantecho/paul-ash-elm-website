@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://ash-elm.ca',
+	site: 'https://resonecho.com',
 	integrations: [mdx(), sitemap()],
 	// If you want to add Tailwind CSS in the future, you can uncomment this section:
 	// integrations: [mdx(), sitemap(), tailwind()],

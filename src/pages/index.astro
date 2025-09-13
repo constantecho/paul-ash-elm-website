@@ -1,110 +1,189 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { SITE_DATA } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, COMPANY_TAGLINE, COMPANY_DESCRIPTION } from '../consts';
 ---
 
 <Layout hideHero={true}>
 	<section class="hero">
-		<div class="quality-badge">Owner-Operated • Fully Insured</div>
-		<h1>Quality Craftsmanship for Your Home</h1>
-		<p>Professional finish carpentry and home improvement services in {SITE_DATA.address.city}, {SITE_DATA.address.province} and surrounding areas. From custom trim work to complete renovations, we deliver exceptional results.</p>
+		<h1>Never Lose Touch Again</h1>
+		<p>We're developing revolutionary mesh networking technology to keep you connected at festivals, in remote areas, and during emergencies—even without cellular service.</p>
 		<div class="hero-buttons">
-			<a href={`tel:${SITE_DATA.phone.raw}`} class="cta-button">Call {SITE_DATA.phone.display}</a>
-			<a href="/contact#quote" class="secondary-button">Request a Quote</a>
+			<a href="#how-it-works" class="cta-button">Discover Our Vision</a>
+			<a href="/contact" class="secondary-button">Join Our Journey</a>
 		</div>
+		<div class="dev-badge">In Development</div>
 	</section>
 
-	<section class="section" id="services">
-		<h2>Our Services</h2>
-		<p class="section-intro">Professional carpentry and home improvement services tailored to your needs and budget.</p>
-
-		<div class="feature-grid">
-			{SITE_DATA.services.map(service => (
-				<div class="feature-item">
-					<h3>{service.name}</h3>
-					<p>{service.description}</p>
+	<section class="section" id="problem-solution">
+		<h2>Communication When It Matters Most</h2>
+		<p class="section-intro">Traditional networks leave you disconnected exactly when you need to communicate most—in crowded venues, remote locations, and during emergencies.</p>
+		
+		<div class="solution-approach">
+			<p>Project Swagger-Saphron (working title) is our innovative approach to solving this universal problem by:</p>
+			<div class="feature-grid">
+				<div class="principle-item">
+					<h3>Responsible Innovation</h3>
+					<ul>
+						<li>Privacy and security are foundational considerations, not afterthoughts</li>
+						<li>We design for battery efficiency to ensure practical everyday use</li>
+						<li>Our technology is being developed with accessibility in mind</li>
+					</ul>
 				</div>
-			))}
-		</div>
-
-		<div class="section-cta">
-			<a href="/services" class="text-link">View all services →</a>
+				<div class="principle-item">
+					<h3>Technical Excellence</h3>
+					<ul>
+						<li>We combine established research with practical innovation</li>
+						<li>Our development process includes rigorous testing in real-world conditions</li>
+						<li>We're building modular systems that can evolve with technological advances</li>
+					</ul>
+				</div>
+				<div class="principle-item">
+					<h3>Transparency</h3>
+					<ul>
+						<li>We're open about our current development status and challenges</li>
+						<li>We set realistic expectations about capabilities and timelines</li>
+						<li>We value honest feedback throughout the development process</li>
+					</ul>
+				</div>
+				<div class="principle-item">
+					<h3>User-Centered Design</h3>
+					<ul>
+						<li>We start with real communication challenges people face</li>
+						<li>Every technical decision is evaluated based on how it improves the user experience</li>
+						<li>Simplicity and reliability are prioritized over feature complexity</li>
+					</ul>
+				</div>
+				<div class="feature-item">
+					<h3>Beyond Infrastructure</h3>
+					<p>Creating device-to-device mesh networks that work without cellular infrastructure or WiFi access points.</p>
+				</div>
+				<div class="feature-item">
+					<h3>Extended Reach</h3>
+					<p>Enabling messages to hop from phone to phone, extending communication range far beyond typical Bluetooth limitations.</p>
+				</div>
+				<div class="feature-item">
+					<h3>Always Reliable</h3>
+					<p>Developing technology optimized for battery life and reliable message delivery when you need it most.</p>
+				</div>
+			</div>
+			<div class="dev-stage">
+				<strong>Current Status:</strong> Early development phase (1-2 of 5). This technology represents our vision for the future of resilient communication.
+			</div>
 		</div>
 	</section>
 
-	<section class="section" id="why-choose-us">
-		<h2>Why Choose Ash & Elm Contracting</h2>
-
+	<section class="section" id="how-it-works">
+		<h2>Reimagining Connectivity</h2>
+		<div class="how-it-works-visual">
+			<!-- Placeholder for mesh network visualization -->
+			<div class="mesh-visualization">
+				<div class="visualization-image">
+					<img src="/images/mesh-concept.png" alt="Mesh Network Concept" />
+					<div class="concept-badge">Conceptual Visualization</div>
+				</div>
+			</div>
+		</div>
+		
 		<div class="steps-grid">
 			<div class="step-item">
-				<h3>Owner-Operated</h3>
-				<p>Personal attention to every project. You work directly with the craftsman, ensuring clear communication and accountability.</p>
+				<div class="step-icon"><!-- Icon: Radar scanning symbol --></div>
+				<h3>Device Discovery</h3>
+				<p>When you run our app, your phone automatically discovers other nearby devices running the same technology.</p>
 			</div>
 			<div class="step-item">
-				<h3>Quality Craftsmanship</h3>
-				<p>Meticulous attention to detail in every cut, joint, and finish. We take pride in work that stands the test of time.</p>
+				<div class="step-icon"><!-- Icon: Multiple route paths --></div>
+				<h3>Intelligent Routing</h3>
+				<p>Messages are securely passed from device to device along optimized paths, extending far beyond your direct range.</p>
 			</div>
 			<div class="step-item">
-				<h3>Local & Reliable</h3>
-				<p>Serving {SITE_DATA.serviceArea.join(', ')} with prompt, dependable service. Your neighbors trust us, and so can you.</p>
+				<div class="step-icon"><!-- Icon: Message with checkmark --></div>
+				<h3>Resilient Delivery</h3>
+				<p>Our technology ensures messages reach their destination, even when connections are intermittent or network conditions change.</p>
 			</div>
 		</div>
-	</section>
-
-	<section class="section service-area">
-		<h2>Service Area</h2>
-		<p class="section-intro">Proudly serving {SITE_DATA.address.city}, {SITE_DATA.address.province} and surrounding communities.</p>
-		<div class="service-area-list">
-			{SITE_DATA.serviceArea.map(area => (
-				<span class="area-badge">{area}</span>
-			))}
+		
+		<div class="dev-stage">
+			<strong>Development Status:</strong> We're actively developing this technology, with core components in early implementation stages.
 		</div>
-	</section>
-
-	<section class="expertise-section" id="quote-form">
-		<h2>Get Your Free Quote</h2>
-		<div class="expertise-content">
-			<p>Ready to start your project? Contact us for a free, no-obligation quote. We'll discuss your needs, timeline, and provide a detailed estimate.</p>
-
-			<div class="contact-methods">
-				<div class="contact-method">
-					<h4>Call Us</h4>
-					<p><a href={`tel:${SITE_DATA.phone.raw}`}>{SITE_DATA.phone.display}</a></p>
-				</div>
-				<div class="contact-method">
-					<h4>Email Us</h4>
-					<p><a href={`mailto:${SITE_DATA.email}`}>{SITE_DATA.email}</a></p>
-				</div>
-			</div>
-		</div>
-
+		
 		<div class="section-cta">
-			<a href="/contact" class="text-link">Complete quote form →</a>
+			<a href="/technology" class="text-link">Learn about our technical approach →</a>
+		</div>
+	</section>
+
+	<section class="section use-cases">
+		<h2>Designed for When You Need It Most</h2>
+		<div class="feature-grid">
+			<div class="feature-item">
+				<h3>Festivals & Events</h3>
+				<p>Stay coordinated with friends at crowded venues where traditional networks are congested or unavailable.</p>
+				<div class="status-note">This is one of our primary use case scenarios informing our development.</div>
+			</div>
+			<div class="feature-item">
+				<h3>Outdoor Adventures</h3>
+				<p>Maintain contact with your group during activities in remote areas without cellular coverage.</p>
+				<div class="status-note">Our long-distance routing protocols are being designed with this scenario in mind.</div>
+			</div>
+			<div class="feature-item">
+				<h3>Emergency Situations</h3>
+				<p>Communicate critical information when traditional infrastructure is down or overloaded.</p>
+				<div class="status-note">Priority messaging features planned for implementation after core functionality.</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="expertise-section" id="progress">
+		<h2>Building the Future of Communication</h2>
+		<div class="expertise-content">
+			<p>ResonEcho was founded to solve a critical problem in modern communication. We're currently in the early stages of development (Phase 1-2 of 5) with a focus on implementing the core BLE mesh networking technology that will power our application.</p>
+			
+			<div class="progress-milestones">
+				<h3>Current Milestones:</h3>
+				<ul>
+					<li><strong>Application architecture</strong> established</li>
+					<li><strong>Basic Bluetooth scanning</strong> implemented</li>
+					<li><strong>UI framework</strong> developed</li>
+					<li><strong>Core mesh protocol</strong> design completed</li>
+				</ul>
+			</div>
+			
+			<div class="next-steps">
+				<h3>Next Steps:</h3>
+				<ul>
+					<li>Complete the BLE mesh implementation</li>
+					<li>Achieve reliable device-to-device communication</li>
+					<li>Begin field testing with multiple devices</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="section-cta">
+			<a href="/about" class="text-link">Learn more about our journey →</a>
 		</div>
 	</section>
 
 	<section class="cta-section">
-		<h2>Ready to Start Your Project?</h2>
-		<p>From trim work to complete renovations, we're here to help bring your vision to life with quality craftsmanship and professional service.</p>
-
-		<div class="trust-indicators">
-			<div class="trust-item">
-				<strong>Fully Insured:</strong> Your property and investment are protected
+		<h2>Join the Communication Revolution</h2>
+		<p>We're looking for partners, advisors, and early adopters who share our vision for resilient communication technology. Here's how you can get involved:</p>
+		
+		<div class="involvement-options">
+			<div class="option-item">
+				<strong>Investment Opportunities:</strong> Help accelerate our development timeline
 			</div>
-			<div class="trust-item">
-				<strong>Owner-Operated:</strong> Direct communication with the craftsman
+			<div class="option-item">
+				<strong>Technical Collaboration:</strong> Contribute expertise in BLE, networking, or mobile development
 			</div>
-			<div class="trust-item">
-				<strong>Local Service:</strong> Serving {SITE_DATA.serviceArea.join(' • ')}
+			<div class="option-item">
+				<strong>Beta Testing:</strong> Sign up to be among the first to test our technology
 			</div>
-			<div class="trust-item">
-				<strong>Payment Options:</strong> {SITE_DATA.paymentMethods.join(' • ')}
+			<div class="option-item">
+				<strong>Name Suggestions:</strong> Help us name our revolutionary app
 			</div>
 		</div>
-
+		
 		<div class="cta-buttons">
-			<a href={`tel:${SITE_DATA.phone.raw}`} class="cta-button">Call {SITE_DATA.phone.display}</a>
-			<a href="/contact" class="secondary-button">Request a Quote</a>
+			<a href="/contact" class="cta-button">Connect With Us</a>
+			<a href="/technology" class="secondary-button">Learn About Our Technology</a>
 		</div>
 	</section>
 </Layout>
@@ -127,33 +206,35 @@ import { SITE_DATA } from '../consts';
 		font-size: 1.5rem;
 		color: rgb(var(--gray));
 	}
-
-	.quality-badge {
+	
+	.hero .dev-badge {
 		position: absolute;
 		top: 3rem;
 		right: 2rem;
-		background-color: var(--green-700);
-		color: white;
-		font-size: 0.8rem;
-		font-weight: 600;
-		padding: 0.5rem 1rem;
-		border-radius: 20px;
 	}
 
 	.hero-buttons {
 		margin-top: 2rem;
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
 	}
-
+	
+	.solution-approach {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	
+	.solution-approach > p {
+		text-align: center;
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+	
 	.steps-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 		margin: 3rem 0;
 	}
-
+	
 	.step-item {
 		text-align: center;
 		padding: 1.5rem;
@@ -161,91 +242,60 @@ import { SITE_DATA } from '../consts';
 		border-radius: 8px;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 	}
-
-	.service-area-list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 0.75rem;
-		margin: 2rem 0;
+	
+	.step-icon {
+		font-size: 2.5rem;
+		color: var(--primary);
+		margin-bottom: 1rem;
 	}
-
-	.area-badge {
-		background-color: rgba(var(--green-700), 0.1);
-		color: var(--green-800);
-		padding: 0.5rem 1rem;
-		border-radius: 20px;
-		font-weight: 500;
-		font-size: 0.9rem;
+	
+	.mesh-visualization {
+		max-width: 800px;
+		margin: 0 auto;
 	}
-
-	.contact-methods {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 2rem;
-		margin: 2rem 0;
-	}
-
-	.contact-method {
-		text-align: center;
-		padding: 1rem;
-		background-color: rgba(var(--gray-light), 0.3);
-		border-radius: 8px;
-	}
-
-	.contact-method h4 {
-		margin-bottom: 0.5rem;
-		color: var(--green-700);
-	}
-
-	.trust-indicators {
+	
+	.involvement-options {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1.5rem;
 		margin: 2rem 0;
 	}
-
-	.trust-item {
+	
+	.option-item {
 		background-color: rgba(var(--gray-light), 0.4);
 		padding: 1rem 1.5rem;
 		border-radius: 6px;
-		text-align: center;
 	}
-
+	
 	.cta-buttons {
 		margin-top: 2rem;
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
 	}
-
+	
 	@media (max-width: 768px) {
 		.hero h1 {
 			font-size: 2.5rem;
 		}
-
+		
 		.hero p {
 			font-size: 1.2rem;
 		}
-
-		.quality-badge {
+		
+		.hero .dev-badge {
 			position: static;
-			margin-bottom: 1rem;
-			display: inline-block;
+			margin-top: 1rem;
 		}
-
+		
 		.steps-grid {
 			grid-template-columns: 1fr;
 		}
-
-		.contact-methods {
+		
+		.involvement-options {
 			grid-template-columns: 1fr;
 		}
-
-		.trust-indicators {
-			grid-template-columns: 1fr;
-		}
-
+		
 		.cta-buttons {
 			flex-direction: column;
 		}
