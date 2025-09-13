@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { SITE_TITLE } from '../consts';
+import { SITE_DATA } from '../consts';
 
 interface Props {
 	title: string;
@@ -12,25 +12,20 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/logo.png' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="apple-touch-icon" href="/logo.png" />
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link
-	rel="alternate"
-	type="application/rss+xml"
-	title={SITE_TITLE}
-	href={new URL('rss.xml', Astro.site)}
-/>
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<!-- Favicon links -->
+<link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -46,6 +41,8 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:locale" content="en_CA" />
+<meta property="og:site_name" content={SITE_DATA.name} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -53,3 +50,70 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- JSON-LD Structured Data for Local Business -->
+{Astro.url.pathname === '/' && (
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://ash-elm.ca",
+  "name": "Ash & Elm Contracting",
+  "alternateName": "Ash & Elm",
+  "description": "Professional finish carpentry and home improvement services in Virden, Manitoba and surrounding areas.",
+  "url": "https://ash-elm.ca",
+  "logo": "https://ash-elm.ca/logo.png",
+  "image": "https://ash-elm.ca/logo.png",
+  "telephone": "+1-204-512-0866",
+  "email": "paul@ash-elm.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Virden",
+    "addressRegion": "Manitoba",
+    "addressCountry": "Canada"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.8492,
+    "longitude": -100.9308
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Virden", "addressRegion": "Manitoba"},
+    {"@type": "City", "name": "Oak Lake", "addressRegion": "Manitoba"},
+    {"@type": "City", "name": "Elkhorn", "addressRegion": "Manitoba"},
+    {"@type": "City", "name": "Reston", "addressRegion": "Manitoba"}
+  ],
+  "serviceType": [
+    "Finish Carpentry",
+    "Doors & Hardware Installation",
+    "Custom Shelving & Built-ins",
+    "Deck & Fence Repairs",
+    "Small Renovations & Repairs",
+    "Flooring Repairs & Transitions"
+  ],
+  "priceRange": "$$",
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": ["Cash", "Cheque", "e-Transfer"],
+  "openingHours": "Mo-Fr 08:00-17:00",
+  "sameAs": [],
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "credentialCategory": "Insurance",
+    "recognizedBy": {
+      "@type": "Organization",
+      "name": "Insurance Provider"
+    }
+  },
+  "taxID": "81250 2235 RT0001",
+  "founder": {
+    "@type": "Person",
+    "name": "Paul"
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Paul"
+  },
+  "slogan": "Quality Finish Carpentry & Home Improvements"
+}
+</script>
+)}
